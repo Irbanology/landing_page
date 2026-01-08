@@ -49,7 +49,7 @@ export default function Hero() {
           */}
           <div className="absolute lg:relative w-[140%] lg:w-[150%] h-full lg:left-[-15%] z-10 opacity-100 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
             <Image
-              src="/iphone.svg"
+              src="/iPhone.svg"
               alt="App preview"
               fill
               priority

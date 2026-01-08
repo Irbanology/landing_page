@@ -16,7 +16,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <Link href="/" scroll={true} className="flex items-center gap-2 cursor-pointer">
             <Image
-              src="/logo.svg"
+              src="/Logo.svg"
               alt="WibeIT Logo"
               width={40}
               height={40}
