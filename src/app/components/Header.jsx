@@ -48,7 +48,7 @@ export default function Header() {
           <span className="text-white/70 text-sm hidden md:block cursor-pointer">
             Support
           </span>
-          <button className="bg-orange-500 hover:bg-orange-800 text-white font-bold text-sm px-6 py-2 rounded-full cursor-pointer hover:text-white/80 transition-all duration-500">
+          <button className="bg-orange-500  text-white font-bold text-sm px-6 py-2 rounded-full cursor-pointer hover:bg-[#ff6a1a] transition-all duration-500">
             Download
           </button>
 

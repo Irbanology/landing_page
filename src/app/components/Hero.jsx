@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <button className="w-full sm:w-auto h-[56px] px-10 rounded-full cursor-pointer bg-[#FE5800] text-white text-[16px] font-bold hover:bg-[#ff6a1a] transition-all">
+            <button className="w-full sm:w-auto h-[56px] px-10 rounded-full cursor-pointer bg-[#FE5800] duration-500 text-white text-[16px] font-bold hover:bg-[#ff6a1a] transition-all">
               Download
             </button>
 
