@@ -61,7 +61,7 @@ export default function WhatWeDo() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-[320px] sm:w-[360px] lg:w-[420px] aspect-[420/362] rounded-[24px] bg-black flex items-center justify-center shadow-xl">
               <Image
-                src="/logo.svg"
+                src="/Logo.svg"
                 alt="WibeIT Logo"
                 width={220}
                 height={220}
