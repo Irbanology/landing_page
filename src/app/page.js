@@ -5,6 +5,10 @@ import Showcase from "@/app/components/Showcase";
 import Section from "@/app/components/Section";
 import Feature from "@/app/components/Feature";
 import WhatWeDo from "@/app/components/WhatWeDo";
+import HowItWork from "@/app/components/HowItWork";
+import ContactForm from "@/app/components/ContactForm";
+import Blog from "@/app/components/Blog";
+
 import UnderConstruction from "@/app/components/underconstruction";
 
 export default function Home() {
@@ -17,6 +21,10 @@ export default function Home() {
       <Section  />
       <Feature  />
       <WhatWeDo />
+      <HowItWork />
+      <ContactForm />
+      <Blog />
+
       <UnderConstruction/>
     </>
   );
