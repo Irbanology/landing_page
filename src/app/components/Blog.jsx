@@ -26,9 +26,9 @@ const blogs = [
 
 export default function Blog() {
   return (
-    <section 
-    id="blog" 
-    className="w-full bg-white py-24 blog">
+    <section
+      id="blog"
+      className="w-full bg-white py-24 blog">
       <div className="max-w-[1280px] mx-auto px-6">
 
         {/* TITLE */}
@@ -40,9 +40,19 @@ export default function Blog() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {blogs.map((blog) => (
             <div key={blog.id} className="group">
-              
+
               {/* IMAGE */}
-              <div className="relative w-full aspect-[405/267] rounded-[20px] overflow-hidden mb-6">
+              {/* <div className="relative w-full aspect-[405/267] rounded-[20px] overflow-hidden mb-6"> */}
+              <div
+                className="
+    relative
+    w-full
+    aspect-[405/267]
+    overflow-hidden
+    mb-6
+    rounded-tr-[48px]
+  "
+              >
                 <Image
                   src={blog.image}
                   alt={blog.title}
@@ -71,7 +81,7 @@ export default function Blog() {
 
         {/* CTA */}
         <div className="flex justify-center mt-16">
-          <button className="rounded-full bg-[#FE5800] text-white text-[14px] font-medium px-8 py-3 hover:bg-[#ff6a1a] transition">
+          <button className="cursor-pointer rounded-full bg-[#FE5800] text-white text-[14px] font-medium px-8 py-3 hover:bg-[#ff6a1a] transition">
             Read the blog
           </button>
         </div>
