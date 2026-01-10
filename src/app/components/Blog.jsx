@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const blogs = [
   {
@@ -25,7 +26,9 @@ const blogs = [
 
 export default function Blog() {
   return (
-    <section className="w-full bg-white py-24">
+    <section 
+    id="blog" 
+    className="w-full bg-white py-24 blog">
       <div className="max-w-[1280px] mx-auto px-6">
 
         {/* TITLE */}

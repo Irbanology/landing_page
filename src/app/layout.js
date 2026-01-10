@@ -1,4 +1,7 @@
+import UnderConstruction from "@/app/components/underconstruction";
+import ScrollToTop from "@/app/components/ScrollToTop";
 import { Poppins } from "next/font/google";
+
 import "./globals.css";
 
 const poppins = Poppins({
@@ -24,7 +27,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-sans antialiased`}>
+        <UnderConstruction />
         {children}
+        <ScrollToTop />
+
       </body>
     </html>
   );

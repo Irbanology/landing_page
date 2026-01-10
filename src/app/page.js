@@ -8,7 +8,11 @@ import WhatWeDo from "@/app/components/WhatWeDo";
 import HowItWork from "@/app/components/HowItWork";
 import ContactForm from "@/app/components/ContactForm";
 import Blog from "@/app/components/Blog";
+import FAQ from "@/app/components/FAQ";
+import Newsletter from "@/app/components/Newsletter";
+import Footer from "@/app/components/Footer";
 
+import ScrollToTop from "@/app/components/ScrollToTop";
 import UnderConstruction from "@/app/components/underconstruction";
 
 export default function Home() {
@@ -17,15 +21,19 @@ export default function Home() {
       <Header />
       <Hero />
       <SecureCommunication />
-      <Showcase  />
-      <Section  />
-      <Feature  />
+      <Showcase />
+      <Section />
+      <Feature />
       <WhatWeDo />
       <HowItWork />
       <ContactForm />
       <Blog />
+      <FAQ />
+      <Newsletter />
+      <Footer />
 
-      <UnderConstruction/>
+      {/* <ScrollToTop /> */}
+      {/* <UnderConstruction /> */}
     </>
   );
 }
