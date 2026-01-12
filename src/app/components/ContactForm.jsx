@@ -45,7 +45,7 @@ export default function ContactForm() {
 
                         {/* Requirement */}
                         <div className="mb-10 text-black">
-                            <Input label="Share your Problem" placeholder="I got an issue when i try to..." full />
+                            <Input label="Share your Opinion" placeholder="I think this need to be change a litle bit..." full />
                         </div>
 
                         {/* Checkbox */}
