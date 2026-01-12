@@ -36,64 +36,77 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative w-full h-[100%] bg-black py-24 min-h-[1000px] overflow-hidden"
+      className="relative w-full py-24 min-h-[1000px] overflow-hidden bg-black"
     >
-      {/* BACKGROUND TOPOGRAPHY PATTERN */}
-      <div 
-        className="absolute inset-0 opacity-20 pointer-events-none"
+      {/* BACKGROUND IMAGE */}
+      <div
+        className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url('/topography.svg')`, // Ensure you have this pattern in your public folder
-          backgroundSize: '800px',
-          backgroundRepeat: 'repeat',
+          backgroundImage: `url('/faq-bg.png')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.15,
         }}
-      ></div>
+      />
 
+      {/* TOPOGRAPHY OVERLAY */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          backgroundImage: `url('/topography.svg')`,
+          backgroundRepeat: "repeat",
+          backgroundSize: "800px",
+          opacity: 0.15,
+        }}
+      />
+
+      {/* CONTENT */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20">
-        
-        {/* SECTION TITLE */}
         <h2 className="text-center font-montserrat text-white text-[32px] md:text-[40px] font-bold mb-20 tracking-[0.1em] uppercase">
           FREQUENTLY ASKED QUESTIONS
         </h2>
 
-        {/* FAQ LIST - Exact 1212px width */}
         <div className="max-w-[1212px] mx-auto space-y-4">
           {faqs.map((faq, index) => {
-            const isOpen = index === openIndex;
+            const isOpen = openIndex === index;
 
             return (
               <div
                 key={index}
-                className="bg-[#F0F8FF] rounded-none transition-all duration-300 border-b border-black/5"
+                className="bg-[#F0F8FF] border-b border-black/5"
               >
-                {/* QUESTION ROW */}
+                {/* QUESTION */}
                 <button
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  onClick={() =>
+                    setOpenIndex(isOpen ? null : index)
+                  }
                   className="w-full flex items-center justify-between text-left px-8 md:px-12 py-8"
                 >
-                  <span className="font-montserrat text-[20px] md:text-[23.93px] font-semibold text-[#141414] leading-[23.93px] tracking-tight">
+                  <span className="font-montserrat text-[20px] md:text-[23.93px] font-semibold text-[#141414]">
                     {faq.question}
                     <span className="text-[#FE5800]">{faq.highlight}</span>
                   </span>
 
-                  <span className="ml-4 text-black flex-shrink-0">
+                  {/* ICON (FIXED) */}
+                  <span className="flex items-center justify-center w-10 h-10 flex-shrink-0 transition-transform duration-300">
                     {isOpen ? (
-                      <FiMinus size={28} strokeWidth={3} />
+                      <FiMinus className="text-black transition-transform duration-300" size={28} />
                     ) : (
-                      <FiPlus size={28} strokeWidth={3} />
+                      <FiPlus className="text-black transition-transform duration-300" size={28} />
                     )}
                   </span>
                 </button>
 
-                {/* ANSWER ROW - Animated Expand/Collapse */}
+                {/* ANSWER (SMOOTH ANIMATION) */}
                 <div
-                  className={`
-                    overflow-hidden transition-all duration-500 ease-in-out
-                    ${isOpen ? "max-h-[300px] opacity-100 pb-10" : "max-h-0 opacity-0"}
-                  `}
+                  className={`grid transition-all duration-500 ease-in-out ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100 pb-10"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
                 >
-                  <div className="px-8 md:px-12">
-                    {/* Exact 992px width for answer text */}
-                    <p className="font-montserrat text-[15px] leading-[20.93px] text-[#696666] max-w-[992px] font-normal">
+                  <div className="overflow-hidden px-8 md:px-12">
+                    <p className="font-montserrat text-[15px] leading-[20.93px] text-[#696666] max-w-[992px]">
                       {faq.answer}
                     </p>
                   </div>

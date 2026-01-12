@@ -3,119 +3,93 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import DownloadModal from "@/app/components/DownloadModal";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showDownload, setShowDownload] = useState(false);
 
   return (
     <header className="w-full h-[70px] border-b border-white/10 bg-black sticky top-0 z-50">
-      <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-10">
+      <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-6 md:px-10">
 
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <Link href="/" scroll={true} className="flex items-center gap-2 cursor-pointer">
-            <Image
-              src="/Logo.svg"
-              alt="WibeIT Logo"
-              width={40}
-              height={40}
-              priority
-            />
-          </Link>
-        </div>
+        {/* LOGO */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/Logo.svg"
+            alt="WibeIT Logo"
+            width={40}
+            height={40}
+            priority
+          />
+        </Link>
 
-        {/* Navigation - Desktop */}
-
-        <nav className="hidden md:flex gap-10 font-[var(--font-inter)] text-[15px] leading-[20.8px] text-white">
-
-          <Link href="#showcase" className="hover:opacity-80 cursor-pointer">
-            Showcase
-          </Link>
-          <Link href="#about" className="hover:opacity-80 cursor-pointer">
-            About
-          </Link>
-          <Link href="#features" className="hover:opacity-80 cursor-pointer">
-            Features
-          </Link>
-          <Link href="#blog" className="hover:opacity-80 cursor-pointer">
-            Blog
-          </Link>
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex gap-10 text-[15px] text-white">
+          <Link href="#showcase" className="hover:opacity-80">Showcase</Link>
+          <Link href="#about" className="hover:opacity-80">About</Link>
+          <Link href="#features" className="hover:opacity-80">Features</Link>
+          <Link href="#blog" className="hover:opacity-80">Blog</Link>
         </nav>
 
-        {/* Right Actions */}
-        <div className="flex items-center gap-6">
-          <span className="text-white/70 text-sm hidden md:block cursor-pointer">
+        {/* RIGHT ACTIONS */}
+        <div className="flex items-center gap-4">
+          <span className="hidden md:block text-white/70 text-sm cursor-pointer">
             Support
           </span>
-          <button className="bg-orange-500  text-white font-bold text-sm px-6 py-2 rounded-full cursor-pointer hover:bg-[#ff6a1a] transition-all duration-500">
+
+          <button
+            onClick={() => setShowDownload(true)}
+            className="bg-[#FE5800] hover:bg-[#ff6a1a] transition text-white font-bold text-sm px-6 py-2 rounded-full"
+          >
             Download
           </button>
 
-          {/* Hamburger Menu Button */}
+          {/* HAMBURGER */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden flex flex-col gap-1.5 w-6 h-6 justify-center"
-            aria-label="Toggle menu"
           >
-            <span className={`w-full h-0.5 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`w-full h-0.5 bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`w-full h-0.5 bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span className={`h-0.5 bg-white transition ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`h-0.5 bg-white transition ${isMenuOpen ? "opacity-0" : ""}`} />
+            <span className={`h-0.5 bg-white transition ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </div>
-
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* MOBILE MENU */}
       <div
-        className={`md:hidden absolute top-[70px] left-0 w-full bg-black border-b border-white/10 transition-all duration-300 overflow-hidden ${isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+        className={`md:hidden absolute top-[70px] left-0 w-full bg-black border-b border-white/10
+        transition-all duration-400 overflow-hidden
+        ${isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}`}
       >
-        <nav className="flex flex-col gap-2 p-6 font-[var(--font-inter)] text-[15px] leading-[20.8px] text-white">
+        <nav className="flex flex-col p-6 gap-2 text-white text-[15px]">
+          {["showcase", "about", "features", "blog"].map((item) => (
+            <Link
+              key={item}
+              href={`#${item}`}
+              onClick={() => setIsMenuOpen(false)}
+              className="py-3 px-4 rounded-lg hover:bg-white/5"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </Link>
+          ))}
 
-
-
-          <Link
-            href="#showcase"
-            onClick={() => setIsOpen(false)}
-            className="py-3 px-4 rounded-lg cursor-pointer transition-all duration-200 hover:bg-white/5 active:bg-white/10"
-          >
-            Showcase
-          </Link>
-
-          <Link
-            href="#about"
-            onClick={() => setIsOpen(false)}
-            className="py-3 px-4 rounded-lg cursor-pointer transition-all duration-200 hover:bg-white/5 active:bg-white/10"
-          >
-            About
-          </Link>
-
-          <Link
-            href="#blog"
-            onClick={() => setIsOpen(false)}
-            className="py-3 px-4 rounded-lg cursor-pointer transition-all duration-200 hover:bg-white/5 active:bg-white/10"
-          >
-            Blog
-          </Link>
-
-          <Link
-            href="#features"
-            onClick={() => setIsOpen(false)}
-            className="py-3 px-4 rounded-lg cursor-pointer transition-all duration-200 hover:bg-white/5 active:bg-white/10"
-          >
-            Features
-          </Link>
           <Link
             href="#support"
-            onClick={() => setIsOpen(false)}
-            className="py-3 px-4 rounded-lg cursor-pointer transition-all duration-200 text-white/70 hover:bg-white/5 active:bg-white/10"
+            onClick={() => setIsMenuOpen(false)}
+            className="py-3 px-4 rounded-lg text-white/70 hover:bg-white/5"
           >
             Support
           </Link>
-
         </nav>
       </div>
+
+      {/* DOWNLOAD MODAL */}
+      <DownloadModal
+        open={showDownload}
+        onClose={() => setShowDownload(false)}
+      />
     </header>
   );
 }

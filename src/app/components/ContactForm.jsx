@@ -27,29 +27,29 @@ export default function ContactForm() {
                     <form className="w-full max-w-[640px]">
 
                         {/* Row 1 */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8">
-                            <Input label="First Name" />
-                            <Input label="Last Name" />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8 text-black">
+                            <Input label="First Name" placeholder="Franklin" />
+                            <Input label="Last Name" placeholder="Smith"/>
                         </div>
 
                         {/* Row 2 */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8">
-                            <Input label="Email" placeholder="johndoe@mail.com" />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8 text-black">
+                            <Input label="Email" placeholder="Franklinsmith@gmail.com" />
                             <Input label="Phone Number" placeholder="+1 012 3456 789" />
                         </div>
 
                         {/* Country */}
-                        <div className="mb-8">
-                            <Input label="Country" full />
+                        <div className="mb-8 text-black">
+                            <Input label="Country" placeholder="Canada" full />
                         </div>
 
                         {/* Requirement */}
-                        <div className="mb-10">
-                            <Input label="Share your requirement" full />
+                        <div className="mb-10 text-black">
+                            <Input label="Share your Problem" placeholder="I got an issue when i try to..." full />
                         </div>
 
                         {/* Checkbox */}
-                        <div className="flex items-center gap-3 mb-12">
+                        <div className="flex items-center gap-3 mb-12 text-black">
                             <div className="relative w-[18px] h-[18px]">
                                 <Image
                                     src="/formcheckicon.svg"
