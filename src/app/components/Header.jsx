@@ -40,7 +40,7 @@ export default function Header() {
 
           <button
             onClick={() => setShowDownload(true)}
-            className="bg-[#FE5800] hover:bg-[#ff6a1a] transition text-white font-bold text-sm px-6 py-2 rounded-full"
+            className="bg-[#FE5800] hover:bg-[#ff6a1a] transition text-white font-bold text-sm px-6 py-2 rounded-full cursor-pointer"
           >
             Download
           </button>

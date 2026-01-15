@@ -1,4 +1,8 @@
+"use client";
 import Image from "next/image";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
 
 export default function ContactForm() {
     return (
@@ -29,14 +33,42 @@ export default function ContactForm() {
                         {/* Row 1 */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8 text-black">
                             <Input label="First Name" placeholder="Franklin" />
-                            <Input label="Last Name" placeholder="Smith"/>
+                            <Input label="Last Name" placeholder="Smith" />
                         </div>
 
                         {/* Row 2 */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8 text-black">
                             <Input label="Email" placeholder="Franklinsmith@gmail.com" />
-                            <Input label="Phone Number" placeholder="+1 012 3456 789" />
+
+                            {/* Phone with country selector */}
+                            <div className="relative phone-field">
+                                <label className="block text-[13px] font-semibold text-[#4D4D4D] mb-2">
+                                    Phone Number
+                                </label>
+
+                                <PhoneInput
+                                    country="us"
+                                    enableSearch
+                                    placeholder="+1 012 3456 789"
+                                    inputStyle={{
+                                        width: "100%",
+                                        border: "none",
+                                        borderBottom: "1px solid rgba(0,0,0,0.2)",
+                                        borderRadius: "0",
+                                        fontSize: "14px",
+                                        paddingLeft: "56px",
+                                        background: "transparent",
+                                        color: "#000",
+                                    }}
+                                    buttonStyle={{
+                                        border: "none",
+                                        background: "transparent",
+                                        paddingLeft: "4px",
+                                    }}
+                                />
+                            </div>
                         </div>
+
 
                         {/* Country */}
                         <div className="mb-8 text-black">

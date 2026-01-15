@@ -5,22 +5,22 @@ const blogs = [
   {
     id: 1,
     image: "/blog-1.png",
-    tag: "Inspiration",
-    title: "8 Creative Ways to Repurpose Your Webinar Content",
+    tag: "Encryption",
+    title: "Why Encryption Is Important and Why We Need It More Than Ever",
   },
   {
     id: 2,
     image: "/blog-2.png",
-    tag: "Inspiration",
+    tag: "Messaging Apps",
     title:
-      "Why Webinars Are the #1 Lead Generation Marketing Strategy, You May Not Be Thinking About",
+      "The Best Encryption Algorithm in 2026: How Secure Messaging Apps Protect Your Data",
   },
   {
     id: 3,
     image: "/blog-3.png",
-    tag: "Inspiration",
+    tag: "Digital Life",
     title:
-      "How to Drive Qualified Pipeline and Enable Sales After Your Webinar Wraps",
+      "How encryption works and we can use it our daily life",
   },
 ];
 

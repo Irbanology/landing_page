@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { FiPlus, FiMinus } from "react-icons/fi";
+import { FiPlus, FiMinus } from "react-icons/fi"; 3
+import Image from "next/image";
+
 
 const faqs = [
   {
@@ -43,20 +45,9 @@ export default function FAQ() {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url('/faq-bg.png')`,
-          backgroundSize: "cover",
+          backgroundSize: "repeat",
           backgroundPosition: "center",
-          opacity: 0.15,
-        }}
-      />
-
-      {/* TOPOGRAPHY OVERLAY */}
-      <div
-        className="absolute inset-0 z-[1]"
-        style={{
-          backgroundImage: `url('/topography.svg')`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "800px",
-          opacity: 0.15,
+          opacity: 0.30,
         }}
       />
 
@@ -66,20 +57,18 @@ export default function FAQ() {
           FREQUENTLY ASKED QUESTIONS
         </h2>
 
-        <div className="max-w-[1212px] mx-auto space-y-4">
+        <div className="max-w-[1212px] mx-auto space-y-4 ">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
               <div
                 key={index}
-                className="bg-[#F0F8FF] border-b border-black/5"
+                className="bg-[#F0F8FF] border-b border-black/5 "
               >
                 {/* QUESTION */}
                 <button
-                  onClick={() =>
-                    setOpenIndex(isOpen ? null : index)
-                  }
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between text-left px-8 md:px-12 py-8"
                 >
                   <span className="font-montserrat text-[20px] md:text-[23.93px] font-semibold text-[#141414]">
@@ -87,23 +76,23 @@ export default function FAQ() {
                     <span className="text-[#FE5800]">{faq.highlight}</span>
                   </span>
 
-                  {/* ICON (FIXED) */}
-                  <span className="flex items-center justify-center w-10 h-10 flex-shrink-0 transition-transform duration-300">
+                  {/* + / - ICON */}
+                  <span className="flex items-center justify-center w-10 h-10 flex-shrink-0">
                     {isOpen ? (
-                      <FiMinus className="text-black transition-transform duration-300" size={28} />
+                      <FiMinus size={28} className="text-black" />
                     ) : (
-                      <FiPlus className="text-black transition-transform duration-300" size={28} />
+                      <FiPlus size={28} className="text-black" />
                     )}
                   </span>
                 </button>
 
-                {/* ANSWER (SMOOTH ANIMATION) */}
+
+                {/* ANSWER */}
                 <div
-                  className={`grid transition-all duration-500 ease-in-out ${
-                    isOpen
-                      ? "grid-rows-[1fr] opacity-100 pb-10"
-                      : "grid-rows-[0fr] opacity-0"
-                  }`}
+                  className={`grid transition-all duration-500 ease-in-out ${isOpen
+                    ? "grid-rows-[1fr] opacity-100 pb-10"
+                    : "grid-rows-[0fr] opacity-0"
+                    }`}
                 >
                   <div className="overflow-hidden px-8 md:px-12">
                     <p className="font-montserrat text-[15px] leading-[20.93px] text-[#696666] max-w-[992px]">

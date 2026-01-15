@@ -73,7 +73,6 @@ export default function DownloadModal({ open, onClose }) {
               border border-white/15
               text-white/90
               hover:bg-[#FE5800]
-        
               transition
             "
           >
@@ -124,7 +123,7 @@ export default function DownloadModal({ open, onClose }) {
           {/* CLOSE */}
           <button
             onClick={handleClose}
-            className="mt-5 w-full text-center text-[13px] text-white/50 hover:text-white transition"
+            className="mt-5 w-full text-center text-[13px] text-white/50 hover:text-white transition cursor-pointer"
           >
             Close
           </button>

@@ -6,7 +6,7 @@ export default function UnderConstruction() {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
 
-  const progress = 70; // 🔥 completion %
+  const progress = 80; // 🔥 completion %
 
   useEffect(() => {
     setOpen(true);
