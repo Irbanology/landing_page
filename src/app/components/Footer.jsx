@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="flex justify-center lg:justify-start">
             <Link href="/">
               <Image
-                src="/logo.svg"
+                src="/Logo.svg"
                 alt="WibeIT"
                 width={147}
                 height={102}
