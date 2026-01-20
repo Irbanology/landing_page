@@ -11,6 +11,7 @@ import Blog from "@/app/components/Blog";
 import FAQ from "@/app/components/FAQ";
 import Newsletter from "@/app/components/Newsletter";
 import Footer from "@/app/components/Footer";
+// import ChildSafetyPolicy from "@/app/policies/child-safety/page";
 
 import ScrollToTop from "@/app/components/ScrollToTop";
 import UnderConstruction from "@/app/components/underconstruction";
@@ -31,7 +32,7 @@ export default function Home() {
       <FAQ />
       <Newsletter />
       <Footer />
-
+      {/* <ChildSafetyPolicy /> */}
       {/* <ScrollToTop /> */}
       {/* <UnderConstruction /> */}
     </>

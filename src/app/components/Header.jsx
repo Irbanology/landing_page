@@ -26,10 +26,10 @@ export default function Header() {
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex gap-10 text-[15px] text-white">
-          <Link href="#showcase" className="hover:opacity-80">Showcase</Link>
-          <Link href="#about" className="hover:opacity-80">About</Link>
-          <Link href="#features" className="hover:opacity-80">Features</Link>
-          <Link href="#blog" className="hover:opacity-80">Blog</Link>
+          <Link href="/#showcase" className="hover:opacity-80">Showcase</Link>
+          <Link href="/#about" className="hover:opacity-80">About</Link>
+          <Link href="/#features" className="hover:opacity-80">Features</Link>
+          <Link href="/#blog" className="hover:opacity-80">Blog</Link>
         </nav>
 
         {/* RIGHT ACTIONS */}

@@ -9,19 +9,20 @@ import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
 const footerLinks = {
   about: [
     { label: "Home", href: "/" },
-    { label: "Features", href: "#features" },
-    { label: "Showcase", href: "#showcase" },
+    { label: "Features", href: "/#features" },
+    { label: "Showcase", href: "/#showcase" },
   ],
   explore: [
-    { label: "Blog", href: "#blog" },
+    { label: "Blog", href: "/#blog" },
   ],
   policy: [
-    { label: "Child Safety", href: "/child-safety" },
-    { label: "FAQs", href: "#faq" },
+    { label: "Privacy Policy", href: "/policies/privacy_policy" },
+    { label: "Child Safety", href: "/policies/child_safety" },
+    { label: "FAQs", href: "/#faq" },
   ],
   company: [
-    { label: "About us", href: "#about" },
-    { label: "Contact us", href: "#contact" },
+    { label: "About us", href: "/#about" },
+    { label: "Contact us", href: "/#contact" },
   ],
 };
 
