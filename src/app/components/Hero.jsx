@@ -3,7 +3,7 @@
 import DownloadModal from "@/app/components/DownloadModal";
 import Image from "next/image";
 import { useState } from "react";
-
+import Link from "next/link";
 
 export default function Hero() {
   // const [isOpen, setIsOpen] = useState(false);
@@ -37,17 +37,19 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
             <button className="w-full sm:w-auto h-[56px] px-10 rounded-full cursor-pointer bg-[#FE5800] duration-500 text-white text-[16px] font-bold hover:bg-[#ff6a1a] transition-all"
-            onClick={() => setShowDownload(true)}
+              onClick={() => setShowDownload(true)}
             >
               Download
             </button>
 
-            <button className="w-full sm:w-auto h-[56px] cursor-pointer px-8 flex items-center justify-center gap-3 rounded-full border border-white/20 text-white text-[16px] hover:bg-white/5 transition-all">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-[12px]">
-                ▶
-              </span>
-              How it works
-            </button>
+            <Link href="#howitworks" scroll={true}>
+              <button className="w-full sm:w-auto h-[56px] cursor-pointer px-8 flex items-center justify-center gap-3 rounded-full border border-white/20 text-white text-[16px] hover:bg-white/5 transition-all">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-[12px]">
+                  ▶
+                </span>
+                How it works
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -68,10 +70,10 @@ export default function Hero() {
         </div>
 
       </div>
-       <DownloadModal
-              open={showDownload}
-              onClose={() => setShowDownload(false)}
-            />
+      <DownloadModal
+        open={showDownload}
+        onClose={() => setShowDownload(false)}
+      />
     </section>
   );
 }

@@ -136,7 +136,7 @@ export default function Footer() {
 
           {/* COPYRIGHT */}
           <p className="font-inter text-[13px] text-white/65 text-center sm:text-left">
-            © 2025 Welcome. All right reserved.
+            © 2026 Welcome. All right reserved.
             <Link
               href="/privacy-policy"
               className="block sm:inline sm:mx-6 hover:opacity-80 transition"

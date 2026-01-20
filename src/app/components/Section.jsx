@@ -39,7 +39,7 @@ export default function Section() {
           </p>
 
           {/* Button */}
-          <Link href="/#showcase">
+          <Link href="/#hero">
             <button
               className="
                 mt-10

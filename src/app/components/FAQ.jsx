@@ -42,12 +42,12 @@ export default function FAQ() {
     >
       {/* BACKGROUND IMAGE */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-cover"
         style={{
           backgroundImage: `url('/faq-bg.png')`,
-          backgroundSize: "repeat",
+          backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          opacity: 0.30,
+          opacity: 0.3,
         }}
       />
 

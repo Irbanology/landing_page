@@ -2,16 +2,30 @@
 import Image from "next/image";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-
+import { useState } from "react";
 
 export default function ContactForm() {
+    const [checked, setChecked] = useState(false);
+    const [error, setError] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); // ❌ page reload stop
+
+        if (!checked) {
+            setError("Please accept terms and conditions");
+            return;
+        }
+
+        setError("");
+        alert("Form submitted successfully ✅");
+    };
+
     return (
         <section
             id="contact"
             className="w-full bg-white py-20 lg:py-28"
         >
             <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
-
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                     {/* LEFT IMAGE */}
@@ -28,7 +42,10 @@ export default function ContactForm() {
                     </div>
 
                     {/* RIGHT FORM */}
-                    <form className="w-full max-w-[640px]">
+                    <form
+                        className="w-full max-w-[640px]"
+                        onSubmit={handleSubmit}
+                    >
 
                         {/* Row 1 */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8 text-black">
@@ -40,7 +57,7 @@ export default function ContactForm() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8 text-black">
                             <Input label="Email" placeholder="Franklinsmith@gmail.com" />
 
-                            {/* Phone with country selector */}
+                            {/* Phone */}
                             <div className="relative phone-field">
                                 <label className="block text-[13px] font-semibold text-[#4D4D4D] mb-2">
                                     Phone Number
@@ -69,56 +86,77 @@ export default function ContactForm() {
                             </div>
                         </div>
 
-
                         {/* Country */}
                         <div className="mb-8 text-black">
                             <Input label="Country" placeholder="Canada" full />
                         </div>
 
-                        {/* Requirement */}
+                        {/* Opinion */}
                         <div className="mb-10 text-black">
-                            <Input label="Share your Opinion" placeholder="I think this need to be change a litle bit..." full />
+                            <Input
+                                label="Share your Opinion"
+                                placeholder="I think this need to be change a litle bit..."
+                                full
+                            />
                         </div>
 
                         {/* Checkbox */}
-                        <div className="flex items-center gap-3 mb-12 text-black">
-                            <div className="relative w-[18px] h-[18px]">
-                                <Image
-                                    src="/formcheckicon.svg"
-                                    alt="check"
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
-                            <p className="text-[14px] text-black/70">
-                                I agree, to terms and conditions
-                            </p>
+                        <div className="mb-6">
+                            <label
+                                className="flex items-center gap-3 cursor-pointer"
+                                onClick={() => {
+                                    setChecked(!checked);
+                                    setError("");
+                                }}
+                            >
+                                <div
+                                    className={`relative w-[18px] h-[18px] border rounded flex items-center justify-center ${checked ? "border-[#FE5800]" : "border-black/30"
+                                        }`}
+                                >
+                                    {checked && (
+                                        <Image
+                                            src="/formcheckicon.svg"
+                                            alt="check"
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    )}
+                                </div>
+
+                                <p className="text-[14px] text-black/70">
+                                    I agree, to terms and conditions
+                                </p>
+                            </label>
+
+                            {error && (
+                                <p className="text-red-500 text-[12px] mt-2">
+                                    {error}
+                                </p>
+                            )}
                         </div>
 
                         {/* Submit */}
                         <button
                             type="submit"
                             className="
-    cursor-pointer
-    rounded-full
-    bg-[#FE5800]
-    px-10
-    py-3
-    text-[14px]
-    font-medium
-    text-white
-    transition-all
-    duration-300
-    hover:bg-[#ff6a1a]
-    hover:opacity-90
-  "
+                cursor-pointer
+                rounded-full
+                bg-[#FE5800]
+                px-10
+                py-3
+                text-[14px]
+                font-medium
+                text-white
+                transition-all
+                duration-300
+                hover:bg-[#ff6a1a]
+                hover:opacity-90
+              "
                         >
                             Submit
                         </button>
 
-
                     </form>
-
                 </div>
             </div>
         </section>
