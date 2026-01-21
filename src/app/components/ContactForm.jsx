@@ -113,7 +113,7 @@ export default function ContactForm() {
                                 }}
                             >
                                 <div
-                                    className={`relative w-[18px] h-[18px] border rounded flex items-center justify-center ${checked ? "border-[#FE5800]" : "border-black/30"
+                                    className={`relative w-[18px] h-[18px] border rounded-full flex items-center justify-center ${checked ? "border-[#FE5800]" : "border-black/30"
                                         }`}
                                 >
                                     {checked && (
@@ -121,7 +121,7 @@ export default function ContactForm() {
                                             src="/formcheckicon.svg"
                                             alt="check"
                                             fill
-                                            className="object-contain"
+                                            className="cover"
                                         />
                                     )}
                                 </div>
