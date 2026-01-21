@@ -91,8 +91,8 @@ export default function RootLayout({ children }) {
                 background: "#000000",   // 🖤 black bg
                 color: "#ffffff",        // 🤍 white text
                 borderRadius: "12px",
-                fontSize: "14px",
-                padding: "12px 16px",
+                fontSize: "16px",
+                padding: "14px 18px",
               },
 
               success: {
