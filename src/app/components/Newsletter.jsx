@@ -29,10 +29,11 @@ export default function Newsletter() {
             
             {/* First name field */}
             <div className="group">
-              <label className="block text-white text-[16px] mb-2 font-montserrat opacity-90">
+              <label htmlFor="newsletter-firstname" className="block text-white text-[16px] mb-2 font-montserrat opacity-90">
                 First name
               </label>
               <input
+                id="newsletter-firstname"
                 type="text"
                 className="
                   w-full
@@ -50,11 +51,12 @@ export default function Newsletter() {
 
             {/* Email field with Arrow Icon */}
             <div className="group relative">
-              <label className="block text-white text-[16px] mb-2 font-montserrat opacity-90">
+              <label htmlFor="newsletter-email" className="block text-white text-[16px] mb-2 font-montserrat opacity-90">
                 Email
               </label>
               <div className="relative flex items-center">
                 <input
+                  id="newsletter-email"
                   type="email"
                   className="
                     w-full

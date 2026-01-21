@@ -77,7 +77,7 @@ export default function FAQ() {
                   </span>
 
                   {/* + / - ICON */}
-                  <span className="flex items-center justify-center w-10 h-10 flex-shrink-0">
+                  <span className="flex items-center justify-center w-10 h-10 flex-shrink-0 cursor-pointer">
                     {isOpen ? (
                       <FiMinus size={28} className="text-black" />
                     ) : (

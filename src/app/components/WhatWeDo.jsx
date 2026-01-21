@@ -16,9 +16,9 @@ export default function WhatWeDo() {
 <div className="max-w-[650px]">
   
   {/* HEADING */}
-  <h3 className="font-inter text-[56px] leading-[58px] font-semibold tracking-[-0.5px] text-black mb-6">
+  <h2 className="font-inter text-[56px] leading-[58px] font-semibold tracking-[-0.5px] text-black mb-6">
     WHAT WE DO
-  </h3>
+  </h2>
 
   {/* PARAGRAPH */}
   <p className="font-inter text-[16px] leading-[26px] text-black/70 max-w-[466px] mb-12">

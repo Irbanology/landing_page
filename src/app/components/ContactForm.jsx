@@ -49,24 +49,26 @@ export default function ContactForm() {
 
                         {/* Row 1 */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8 text-black">
-                            <Input label="First Name" placeholder="Franklin" />
-                            <Input label="Last Name" placeholder="Smith" />
+                            <Input label="First Name" placeholder="Franklin" id="firstName" />
+                            <Input label="Last Name" placeholder="Smith" id="lastName" />
                         </div>
 
                         {/* Row 2 */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-8 text-black">
-                            <Input label="Email" placeholder="Franklinsmith@gmail.com" />
+                            <Input label="Email" placeholder="Franklinsmith@gmail.com" id="email" />
 
                             {/* Phone */}
                             <div className="relative phone-field">
-                                <label className="block text-[13px] font-semibold text-[#4D4D4D] mb-2">
+                                <label htmlFor="phone" className="block text-[13px] font-semibold text-[#4D4D4D] mb-2">
                                     Phone Number
                                 </label>
 
                                 <PhoneInput
+                                    id="phone"
                                     country="us"
                                     enableSearch
                                     placeholder="+1 012 3456 789"
+                                    aria-label="Phone Number"
                                     inputStyle={{
                                         width: "100%",
                                         border: "none",
@@ -88,7 +90,7 @@ export default function ContactForm() {
 
                         {/* Country */}
                         <div className="mb-8 text-black">
-                            <Input label="Country" placeholder="Canada" full />
+                            <Input label="Country" placeholder="Canada" full id="country" />
                         </div>
 
                         {/* Opinion */}
@@ -97,6 +99,7 @@ export default function ContactForm() {
                                 label="Share your Opinion"
                                 placeholder="I think this need to be change a litle bit..."
                                 full
+                                id="opinion"
                             />
                         </div>
 
@@ -164,13 +167,15 @@ export default function ContactForm() {
 }
 
 /* INPUT COMPONENT */
-function Input({ label, placeholder = "", full = false }) {
+function Input({ label, placeholder = "", full = false, id }) {
+    const inputId = id || label.toLowerCase().replace(/\s+/g, '-');
     return (
         <div className={full ? "w-full" : ""}>
-            <label className="block text-[13px] font-semibold text-[#4D4D4D] mb-2">
+            <label htmlFor={inputId} className="block text-[13px] font-semibold text-[#4D4D4D] mb-2">
                 {label}
             </label>
             <input
+                id={inputId}
                 placeholder={placeholder}
                 className="
           w-full

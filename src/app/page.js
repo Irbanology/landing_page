@@ -20,17 +20,19 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
-      <SecureCommunication />
-      <Showcase />
-      <Section />
-      <Feature />
-      <WhatWeDo />
-      <HowItWork />
-      <ContactForm />
-      <Blog />
-      <FAQ />
-      <Newsletter />
+      <main>
+        <Hero />
+        <SecureCommunication />
+        <Showcase />
+        <Section />
+        <Feature />
+        <WhatWeDo />
+        <HowItWork />
+        <ContactForm />
+        <Blog />
+        <FAQ />
+        <Newsletter />
+      </main>
       <Footer />
       {/* <ChildSafetyPolicy /> */}
       {/* <ScrollToTop /> */}

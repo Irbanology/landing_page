@@ -1,13 +1,35 @@
+import { FiDownload } from "react-icons/fi";
+
 export default function PrivacyPolicy() {
     return (
         <main id="privacy-policy" className="w-full bg-white text-black">
             <div className="max-w-[900px] mx-auto px-6 py-20 leading-relaxed">
+                <p className="text-sm text-black/60 mb-2">
+                    Policies • Trust • Safety
+                </p>
 
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">
                     Wibeit Privacy Policy
                 </h1>
+                <a
+                    href="https://wibeit.co/docs/privacy_policy.pdf"
+                    download
+                    className="
+    inline-flex
+    items-center
+    gap-2
+    mt-4
+    text-sm
+    font-medium
+    text-[#FE5800]
+    hover:underline
+    transition
+  "
+                >
+                    <FiDownload size={16} /> Download PDF
+                </a>
 
-                <p className="mb-6">
+                <p className="mb-6 mt-5">
                     <strong>Effective Date:</strong> October 24, 2025<br />
                     <strong>Last Updated:</strong> October 24, 2025
                 </p>
@@ -84,6 +106,7 @@ export default function PrivacyPolicy() {
 
                 <Section title="5. Data Sharing">
                     <p>We do not sell personal information.</p>
+                    <p>We may share limited data with trusted service providers strictly for:</p>
                     <ul className="list-disc pl-6 space-y-2 mt-2">
                         <li>Service operation and delivery</li>
                         <li>Analytics and performance monitoring</li>
@@ -112,44 +135,42 @@ export default function PrivacyPolicy() {
                         <li>Correct inaccurate information</li>
                         <li>Request deletion of your account and data</li>
                         <li>Object to or restrict certain processing activities</li>
+                        <li>Account and Data Deletion</li>
+                        <li>You may delete your account at any time by navigating to: Settings → Account → Delete Account</li>
+                        <li>You may also request deletion by contacting: support@wibeit.co</li>
+                        <li>Once deletion is requested, associated data is permanently removed within a reasonable timeframe, unless retention is required by law.</li>
                     </ul>
 
-                    <p className="mt-4 font-medium">Account and Data Deletion</p>
-                    <p className="mt-2">Settings → Account → Delete Account</p>
-                    <p className="mt-2">
-                        You may also request deletion by contacting:<br />
-                        support@wibeit.co
-                    </p>
+
                 </Section>
 
                 <Section title="9. Permissions Used">
+                    <p>Wibeit requests the following permissions only when required:</p>
                     <ul className="list-disc pl-6 space-y-2">
-                        <li>Camera: To capture and share photos or set a profile picture</li>
-                        <li>Microphone: To enable real-time voice calls (audio is not recorded)</li>
-                        <li>Storage / Media Access: To send and receive images or files</li>
-                        <li>Notifications: To deliver message and call alerts</li>
-                        <li>Advertising ID: For analytics and attribution via AppsFlyer</li>
+                        <li><strong>Camera:</strong> To capture and share photos or set a profile picture</li>
+                        <li><strong>Microphone:</strong> To enable real-time voice calls (audio is not recorded)</li>
+                        <li><strong>Storage / Media Access:</strong> To send and receive images or files</li>
+                        <li><strong>Notifications:</strong> To deliver message and call alerts</li>
+                        <li><strong>Advertising ID:</strong> For analytics and attribution via AppsFlyer</li>
                     </ul>
+                    <p>Users may reset or limit the use of the Advertising ID through their device settings.</p>
                 </Section>
 
                 <Section title="10. International Data Transfers">
                     <p>
-                        Your information may be processed and stored on servers located outside your country.
-                        We ensure appropriate safeguards are in place in accordance with applicable data protection laws.
+                        Your information may be processed and stored on servers located outside your country. We ensure appropriate safeguards are in place in accordance with applicable data protection laws.
                     </p>
                 </Section>
 
                 <Section title="11. Limitation of Liability">
                     <p>
-                        Wibeit is provided on an “as is” and “as available” basis.
-                        We do not guarantee uninterrupted or error-free service and are not responsible for issues caused by third-party services.
+                        Wibeit is provided on an “as is” and “as available” basis.  We do not guarantee uninterrupted or error-free service and are not responsible for issues caused by third-party services.
                     </p>
                 </Section>
 
                 <Section title="12. Changes to This Policy">
                     <p>
-                        We may update this Privacy Policy from time to time.
-                        Continued use of Wibeit constitutes acceptance of the updated policy.
+                        We may update this Privacy Policy from time to time. Continued use of Wibeit constitutes acceptance of the updated policy.
                     </p>
                 </Section>
 
@@ -160,29 +181,45 @@ export default function PrivacyPolicy() {
                 </Section>
 
                 <Section title="14. GDPR – European Economic Area (EEA), United Kingdom & Switzerland">
+                    <p>If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, you have rights under the General Data Protection Regulation (GDPR).</p>
+                    <p>These rights include:</p>
                     <ul className="list-disc pl-6 space-y-2">
-                        <li>Right of access</li>
-                        <li>Right to rectification</li>
-                        <li>Right to erasure</li>
+                        <li>Right of access to your personal data</li>
+                        <li>Right of access to your personal data</li>
+                        <li>Right to erasure (“right to be forgotten”)</li>
                         <li>Right to restrict processing</li>
                         <li>Right to data portability</li>
-                        <li>Right to object</li>
+                        <li>Right to object to processing</li>
+                    </ul>
+                    <p>We process personal data based on one or more of the following lawful bases:</p>
+                    <ul>
+                        <li>Performance of a contract</li>
+                        <li>Compliance with legal obligations</li>
+                        <li>Legitimate interests (such as security and service improvement)</li>
+                        <li>User consent, where required</li>
+                        <li>You may exercise your GDPR rights by contacting: privacy@wibeit.co</li>
+                        <li>You also have the right to lodge a complaint with your local data protection authority.</li>
                     </ul>
                 </Section>
 
                 <Section title="15. California Privacy Rights (CCPA / CPRA)">
+                    <p>If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA).</p>
+                    <p>These rights include:</p>
                     <ul className="list-disc pl-6 space-y-2">
-                        <li>Right to know</li>
-                        <li>Right to delete</li>
-                        <li>Right to correct</li>
-                        <li>Right to opt out</li>
+                        <li>Right to know what personal information is collected, used, or shared</li>
+                        <li>Right to request deletion of personal information</li>
+                        <li>Right to correct inaccurate personal information</li>
+                        <li>Right to opt out of the sale or sharing of personal information</li>
+                        <li>Wibeit does not sell personal information as defined under CCPA/CPRA.</li>
+                        <li>California residents may exercise their rights by contacting: privacy@wibeit.co</li>
+                        <li>We do not discriminate against users for exercising their privacy rights.</li>
                     </ul>
                 </Section>
 
                 <Section title="16. Do Not Track Signals">
                     <p>
                         Some devices and browsers offer “Do Not Track” signals.
-                        Currently, Wibeit does not respond to such signals.
+                        Currently, Wibeit does not respond to such signals due to the lack of an industry-wide standard.
                     </p>
                 </Section>
                 <p className="mt-16 text-center text-sm text-black/50">

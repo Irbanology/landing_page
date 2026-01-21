@@ -10,9 +10,8 @@ export default function Section() {
       {/* Background Image */}
 <Image
   src="/section.png"
-  alt="About WibeIT"
+  alt=""
   fill
-  priority
   className="
     absolute
     inset-0

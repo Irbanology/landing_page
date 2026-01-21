@@ -12,9 +12,9 @@ export default function Showcase() {
 
         {/* HEADER SECTION - Fluid Typography Fixed */}
         <div className="mb-20 md:mb-32 relative">
-          <h3 className="font-inter text-[32px] md:text-[48px] lg:text-[64px] font-normal leading-none tracking-[-0.02em] text-black">
+          <h2 className="font-inter text-[32px] md:text-[48px] lg:text-[64px] font-normal leading-none tracking-[-0.02em] text-black">
             Seamless Chatting
-          </h3>
+          </h2>
 
           {/* 1. 'Experience' text ko responsive banaya bina screen se bahar nikle.
       2. Tracking ko tight kiya professional look ke liye.
@@ -47,7 +47,6 @@ export default function Showcase() {
                   src="/login_Ui.png"
                   alt="Login Interface"
                   fill
-                  priority
                   className="object-contain object-right-bottom"
                 />
               </div>
@@ -95,7 +94,6 @@ export default function Showcase() {
                 src="/intro_Ui.png"
                 alt="Chat Interface"
                 fill
-                priority
                 className="object-cover object-right-bottom"
               />
             </div>
