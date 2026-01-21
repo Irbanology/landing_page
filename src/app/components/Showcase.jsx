@@ -6,7 +6,7 @@ export default function Showcase() {
   return (
     <section
       id="showcase"
-      className="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-20 overflow-hidden"
+      className="bg-white py-20 md:py-24 px-4 sm:px-6 lg:px-20 overflow-hidden mt-5"
     >
       <div className="max-w-[1440px] mx-auto">
 

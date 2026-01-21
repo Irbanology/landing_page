@@ -10,17 +10,18 @@ export default function Header() {
   const [showDownload, setShowDownload] = useState(false);
 
   return (
-    <header className="w-full h-[70px] border-b border-white/10 bg-black sticky top-0 z-50">
+    <header  id="home"  className="w-full h-[70px] border-b border-white/10 bg-black sticky top-0 z-50"  >
       <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-6 md:px-10">
 
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/#home" className="flex items-center gap-2">
           <Image
             src="/Logo.svg"
             alt="WibeIT Logo"
             width={40}
             height={40}
             priority
+            
           />
         </Link>
 
