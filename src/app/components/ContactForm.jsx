@@ -3,21 +3,43 @@ import Image from "next/image";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function ContactForm() {
     const [checked, setChecked] = useState(false);
     const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // ❌ page reload stop
+        e.preventDefault();
+
+        const form = e.target;
+
+        const firstName = form.firstName.value.trim();
+        const lastName = form.lastName.value.trim();
+        const email = form.email.value.trim();
+        const country = form.country.value.trim();
+        const opinion = form.opinion.value.trim();
+
+        // ❌ Validation
+        if (!firstName || !lastName || !email || !country || !opinion) {
+            toast.error("Please fill all required fields");
+            return;
+        }
 
         if (!checked) {
-            setError("Please accept terms and conditions");
+            setError("Please accept terms & conditions");
+            toast.error("You must accept terms & conditions");
             return;
         }
 
         setError("");
-        alert("Form submitted successfully ✅");
+
+        // ✅ Success
+        toast.success("Form submitted successfully.");
+
+        // optional reset
+        form.reset();
+        setChecked(false);
     };
 
     return (

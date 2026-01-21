@@ -1,7 +1,7 @@
 // import UnderConstruction from "@/app/components/underconstruction";
 import ScrollToTop from "@/app/components/ScrollToTop";
 import { Poppins } from "next/font/google";
-
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -80,12 +80,38 @@ export default function RootLayout({ children }) {
         />
 
         {/* <UnderConstruction /> */}
-
         {/* 4. FIX: Landmark tag add kiya accessibility ke liye */}
+
         <main id="main-content">
           {children}
-        </main>
+          <Toaster
+            position="bottom-center"
+            toastOptions={{
+              style: {
+                background: "#000000",   // 🖤 black bg
+                color: "#ffffff",        // 🤍 white text
+                borderRadius: "12px",
+                fontSize: "14px",
+                padding: "12px 16px",
+              },
 
+              success: {
+                iconTheme: {
+                  primary: "#FE5800",    // 🟧 orange icon
+                  secondary: "#000000",  // icon bg same as toast
+                },
+              },
+
+              error: {
+                iconTheme: {
+                  primary: "#FE5800",    // 🟧 orange error icon too
+                  secondary: "#000000",
+                },
+              },
+            }}
+          />
+
+        </main>
         <ScrollToTop />
       </body>
     </html>

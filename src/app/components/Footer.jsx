@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiTwitter, FiFacebook, FiMail } from "react-icons/fi";
 import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 /* =======================
    FOOTER LINKS CONFIG
@@ -150,15 +151,14 @@ export default function Footer() {
 
           {/* COPYRIGHT */}
           <p className="font-inter text-[13px] text-white/65 text-center sm:text-left">
-            © 2026 WIBEIT LLC, 212 N 2nd St, Ste 100, Richmond, KY 40475, United States. All rights reserved.
+            © 2025 WIBEIT LLC, 212 N 2nd St, Ste 100, Richmond, KY 40475, United States. All rights reserved.
 
             <Link
               href="/policies/privacy_policy"
-              className="block sm:inline sm:mx-6 hover:opacity-80 transition mt-5"
+              className="block sm:inline sm:mx-6 hover:opacity-80 transition"
             >
               Privacy Policy
             </Link>
-
 
           </p>
 
@@ -178,7 +178,7 @@ export default function Footer() {
             {/* SOCIAL ICONS */}
             <div className="flex gap-5 text-white/65">
               <a href="https://x.com/WibeIT" target="_blank" rel="noopener noreferrer" aria-label="Follow WibeIT on Twitter">
-                <FiTwitter size={18} className="hover:text-white transition" />
+                <BsTwitterX size={18} className="hover:text-white transition" />
               </a>
               <a href="https://www.instagram.com/wibe.it/" target="_blank" rel="noopener noreferrer" aria-label="Follow WibeIT on Instagram">
                 <FaInstagram size={18} className="hover:text-white transition" />
