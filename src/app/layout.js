@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
         <main id="main-content">
           {children}
           <Toaster
-            position="bottom-center"
+            position="bottom-right"
             toastOptions={{
               style: {
                 background: "#000000",   // 🖤 black bg
