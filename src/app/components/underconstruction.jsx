@@ -56,7 +56,7 @@ export default function UnderConstruction() {
               </h2>
 
               <p className="font-inter text-[18px] leading-[30px] text-black/70 mb-4">
-                We’re carefully crafting the next parts of WibeIT.
+                We’re carefully crafting the next parts of WibeIT's Frontend.
                 The core experience is already in place, while advanced features,
                 refinements, and enhancements are actively being built.
               </p>

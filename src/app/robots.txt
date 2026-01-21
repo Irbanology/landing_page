@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /test
+
+Sitemap: https://www.wibeit.co/sitemap.xml

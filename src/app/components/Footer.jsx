@@ -14,11 +14,13 @@ const footerLinks = {
   ],
   explore: [
     { label: "Blog", href: "/#blog" },
+    { label: "FAQs", href: "/#faq" },
   ],
   policy: [
     { label: "Privacy Policy", href: "/policies/privacy_policy" },
     { label: "Child Safety", href: "/policies/child_safety" },
-    { label: "FAQs", href: "/#faq" },
+    { label: "Legal", href: "/policies/child_safety" },
+    { label: "Delete Account", href: "https://wibex-dd474.firebaseapp.com/" }
   ],
   company: [
     { label: "About us", href: "/#about" },
@@ -137,7 +139,7 @@ export default function Footer() {
 
           {/* COPYRIGHT */}
           <p className="font-inter text-[13px] text-white/65 text-center sm:text-left">
-            © 2026 Welcome. All right reserved.
+            © 2025 Wibeit Technologies. All right reserved.
             <Link
               href="/privacy-policy"
               className="block sm:inline sm:mx-6 hover:opacity-80 transition"

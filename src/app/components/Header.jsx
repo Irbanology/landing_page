@@ -34,9 +34,11 @@ export default function Header() {
 
         {/* RIGHT ACTIONS */}
         <div className="flex items-center gap-4">
-          <span className="hidden md:block text-white/70 text-sm cursor-pointer">
-            Support
-          </span>
+          <Link href="mailto:support@wibeit.co">
+            <span className="hidden md:block text-white/70 text-sm cursor-pointer">
+              Support
+            </span>
+          </Link>
 
           <button
             onClick={() => setShowDownload(true)}
@@ -76,7 +78,7 @@ export default function Header() {
           ))}
 
           <Link
-            href="#support"
+            href="mailto:support@wibeit.co"
             onClick={() => setIsMenuOpen(false)}
             className="py-3 px-4 rounded-lg text-white/70 hover:bg-white/5"
           >
