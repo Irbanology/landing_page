@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /test
 
-Sitemap: https://www.wibeit.co/sitemap.xml
+Sitemap: https://wibeit.co/sitemap.xml
