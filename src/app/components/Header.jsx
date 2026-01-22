@@ -1,16 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import DownloadModal from "@/app/components/DownloadModal";
+
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showDownload, setShowDownload] = useState(false);
 
+  useEffect(() => {
+    const removeHash = () => {
+      if (window.location.hash) {
+        window.history.replaceState(
+          null,
+          "",
+          window.location.pathname + window.location.search
+        );
+      }
+    };
+
+    window.addEventListener("hashchange", removeHash);
+
+    return () => {
+      window.removeEventListener("hashchange", removeHash);
+    };
+  }, []);
+
+
   return (
-    <header  id="home"  className="w-full h-[70px] border-b border-white/10 bg-black sticky top-0 z-50"  >
+    <header id="home" className="w-full h-[70px] border-b border-white/10 bg-black sticky top-0 z-50"  >
       <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-6 md:px-10">
 
         {/* LOGO */}
@@ -21,7 +43,7 @@ export default function Header() {
             width={40}
             height={40}
             priority
-            
+
           />
         </Link>
 

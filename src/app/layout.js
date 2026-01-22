@@ -18,6 +18,10 @@ export const metadata = {
   description: "Experience double layer encrypted chats, calls, and file sharing built for people who want real privacy. Secure messaging with end-to-end encryption.",
   icons: {
     icon: "/favicon.png",
+    icons: {
+      icon: "/favicon.png",
+      apple: "/apple-touch-icon.png",
+    },
   },
   alternates: {
     // 2. FIX: Canonical mein hamesha full URL dena chahiye
@@ -46,25 +50,19 @@ export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "WibeIT",
-    "applicationCategory": "CommunicationApplication",
-    "operatingSystem": "Android, iOS",
-    "offers": {
+    name: "WibeIT",
+    applicationCategory: "CommunicationApplication",
+    operatingSystem: "Android, iOS",
+    offers: {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+      price: "0",
+      priceCurrency: "USD"
     },
-    // TIP: Rating tab tak mat dalein jab tak real reviews na hon
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "reviewCount": "10"
-    },
-    "description": "Highly encrypted and secure messaging app with double-layer encryption.",
-    "url": "https://wibeit.co",
-    "author": {
+    description: "Highly encrypted and secure messaging app with double-layer encryption.",
+    url: "https://wibeit.co",
+    author: {
       "@type": "Organization",
-      "name": "Wibeit Technologies"
+      name: "Wibeit Technologies"
     }
   };
 
