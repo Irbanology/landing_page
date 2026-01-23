@@ -8,27 +8,27 @@ import Image from "next/image";
 const faqs = [
   {
     question: "What is ",
-    highlight: "Wibeit?",
+    highlight: "WibeIT?",
     answer:
-      "Wibeit is a secure messaging application designed to provide private, safe, and confidential communication. With end-to-end encryption, only you and the person you're communicating with can read your messages.",
+      "WibeIT is a secure messaging application designed to provide private, safe, and confidential communication. With end-to-end encryption, only you and the person you're communicating with can read your messages.",
   },
   {
-    question: "How does Wibeit ensure ",
+    question: "How does WibeIT ensure ",
     highlight: "my messages are secure?",
     answer:
-      "Wibeit uses strong end-to-end encryption combined with modern cryptographic standards, ensuring messages remain private and inaccessible to third parties.",
+      "WibeIT uses strong end-to-end encryption combined with modern cryptographic standards, ensuring messages remain private and inaccessible to third parties.",
   },
   {
-    question: "Does Wibeit collect ",
+    question: "Does WibeIT collect ",
     highlight: "personal data?",
     answer:
-      "Wibeit is designed with privacy-first principles. Minimal data is collected, and no unnecessary tracking is performed.",
+      "WibeIT is designed with privacy-first principles. Minimal data is collected, and no unnecessary tracking is performed.",
   },
   {
-    question: "Is Wibeit ",
+    question: "Is WibeIT ",
     highlight: "free to use?",
     answer:
-      "Yes, Wibeit is free to use with core features available at no cost.",
+      "Yes, WibeIT is free to use with core features available at no cost.",
   },
 ];
 

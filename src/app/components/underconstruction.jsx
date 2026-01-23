@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 export default function UnderConstruction() {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
-  const TRANSITION_MS = 400; // keep JS timer in sync with CSS duration
 
   const progress = 80; // 🔥 completion %
 
@@ -18,7 +17,7 @@ export default function UnderConstruction() {
     setTimeout(() => {
       setOpen(false);
       setClosing(false);
-    }, TRANSITION_MS);
+    }, 300);
   };
 
   if (!open) return null;
@@ -29,23 +28,19 @@ export default function UnderConstruction() {
       <div
         className={`
           fixed inset-0 z-40 bg-black/40 backdrop-blur-sm
-          transition-opacity duration-400 ease-out
+          transition-opacity duration-300
           ${closing ? "opacity-0" : "opacity-100"}
         `}
       />
 
       {/* MODAL */}
-      <div
-        className={`fixed inset-0 z-50 flex items-center justify-center px-6 ${
-          closing ? "pointer-events-none" : ""
-        }`}
-      >
+      <div className="fixed inset-0 z-50 flex items-center justify-center px-6">
         <div
           className={`
             relative
             bg-white max-w-[760px] w-full rounded-2xl
             p-8 sm:p-10 shadow-xl
-            transform transition-all duration-400 ease-out
+            transform transition-all duration-300
             ${closing
               ? "opacity-0 scale-95 translate-y-2"
               : "opacity-100 scale-100 translate-y-0"}

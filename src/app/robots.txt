@@ -2,5 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /test
-
 Sitemap: https://wibeit.co/sitemap.xml

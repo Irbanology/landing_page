@@ -74,8 +74,9 @@ export default function SecureCommunication() {
           <div className="relative w-[340px] h-[240px] md:w-[480px] md:h-[320px] lg:mr-[-40px]">
             <Image
               src="/Layer 1.png"
-              alt=""
+              alt="WT Background Layer"
               fill
+              priority
               className="
                 object-contain
                 transition-all duration-700 ease-out

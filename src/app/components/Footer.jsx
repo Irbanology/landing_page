@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiTwitter, FiFacebook, FiMail } from "react-icons/fi";
 import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
-import { BsTwitterX } from "react-icons/bs";
 
 /* =======================
    FOOTER LINKS CONFIG
@@ -20,8 +19,8 @@ const footerLinks = {
   policy: [
     { label: "Privacy Policy", href: "/policies/privacy_policy" },
     { label: "Child Safety", href: "/policies/child_safety" },
-    { label: "Legal", href: "/policies/legal" },
-    { label: "Delete Account", href: "https://wibex-dd474.firebaseapp.com/", external: true }
+    { label: "Legal", href: "/policies/child_safety" },
+    { label: "Delete Account", href: "https://wibex-dd474.firebaseapp.com/" }
   ],
   company: [
     { label: "About us", href: "/#about" },
@@ -99,23 +98,12 @@ export default function Footer() {
               <ul className="space-y-4">
                 {footerLinks.policy.map((item, i) => (
                   <li key={i}>
-                    {item.external ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[18px] hover:opacity-80 transition"
-                      >
-                        {item.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="text-[18px] hover:opacity-80 transition"
-                      >
-                        {item.label}
-                      </Link>
-                    )}
+                    <Link
+                      href={item.href}
+                      className="text-[18px] hover:opacity-80 transition"
+                    >
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -151,15 +139,19 @@ export default function Footer() {
 
           {/* COPYRIGHT */}
           <p className="font-inter text-[13px] text-white/65 text-center sm:text-left">
-            © 2025 WIBEIT LLC, 212 N 2nd St, Ste 100, Richmond, KY 40475, United States. All rights reserved.
-
+            © 2025 Wibeit Technologies. All right reserved.
             <Link
-              href="/policies/privacy_policy"
+              href="/privacy-policy"
               className="block sm:inline sm:mx-6 hover:opacity-80 transition"
             >
               Privacy Policy
             </Link>
-
+            <Link
+              href="/terms-of-service"
+              className="block sm:inline hover:opacity-80 transition"
+            >
+              Terms of Service
+            </Link>
           </p>
 
           {/* RIGHT SIDE */}
@@ -169,7 +161,6 @@ export default function Footer() {
             <a
               href="mailto:support@wibeit.co"
               className="inline-flex items-center gap-3 text-white text-[14px] hover:opacity-90 transition"
-              aria-label="Contact WibeIT Support via Email"
             >
               <FiMail size={18} />
               <span>support@wibeit.co</span>
@@ -177,16 +168,16 @@ export default function Footer() {
 
             {/* SOCIAL ICONS */}
             <div className="flex gap-5 text-white/65">
-              <a href="https://x.com/WibeIT" target="_blank" rel="noopener noreferrer" aria-label="Follow WibeIT on Twitter">
-                <BsTwitterX size={18} className="hover:text-white transition" />
+              <a href="https://x.com/WibeIT" target="_blank" rel="noopener noreferrer">
+                <FiTwitter size={18} className="hover:text-white transition" />
               </a>
-              <a href="https://www.instagram.com/wibe.it/" target="_blank" rel="noopener noreferrer" aria-label="Follow WibeIT on Instagram">
+              <a href="https://www.instagram.com/wibe.it/" target="_blank" rel="noopener noreferrer">
                 <FaInstagram size={18} className="hover:text-white transition" />
               </a>
-              <a href="https://www.facebook.com/people/Wibeit/61581175611436/" target="_blank" rel="noopener noreferrer" aria-label="Follow WibeIT on Facebook">
+              <a href="https://www.facebook.com/people/Wibeit/61581175611436/" target="_blank" rel="noopener noreferrer">
                 <FiFacebook size={18} className="hover:text-white transition" />
               </a>
-              <a href="https://t.me/wibeitapplication" target="_blank" rel="noopener noreferrer" aria-label="Join WibeIT on Telegram">
+              <a href="https://t.me/wibeitapplication" target="_blank" rel="noopener noreferrer">
                 <FaTelegramPlane size={18} className="hover:text-white transition" />
               </a>
             </div>

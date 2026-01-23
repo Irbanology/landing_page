@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Background SVG */}
       <Image
         src="/bg.svg"
-        alt=""
+        alt="background"
         fill
         className="object-cover opacity-15 z-0"
         priority

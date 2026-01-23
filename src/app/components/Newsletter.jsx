@@ -1,5 +1,3 @@
-"use client";
-
 import { FiArrowRight } from "react-icons/fi";
 
 export default function Newsletter() {

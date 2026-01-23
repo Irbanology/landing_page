@@ -8,11 +8,12 @@ export default function Section() {
       className="relative w-full min-h-[100vh] bg-black overflow-hidden flex items-center"
     >
       {/* Background Image */}
-<Image
-  src="/section.png"
-  alt=""
-  fill
-  className="
+      <Image
+        src="/section.png"
+        alt="About WibeIT"
+        fill
+        priority
+        className="
     absolute
     inset-0
     object-contain
@@ -20,21 +21,22 @@ export default function Section() {
     z-0
     opacity-100
   "
-/>
+      />
 
       {/* Content Wrapper */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="max-w-[640px]">
-          
+
           {/* Heading */}
           <h2 className="text-white font-inter text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.1] tracking-[-2px]">
-            About Us
+            About WibeIT
           </h2>
 
           {/* Paragraph */}
           <p className="mt-6 text-white/70 font-inter text-[18px] leading-[31px] max-w-[447px]">
-            Private, powerful, and built for people who take their
-            conversations as seriously as their security.
+            WibeIT is a privacy-focused messaging application designed to provide secure
+            communication through end-to-end encryption. It allows users to send messages,
+            make private calls, and share files securely.
           </p>
 
           {/* Button */}

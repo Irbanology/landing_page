@@ -13,19 +13,64 @@ export default function Header() {
   const [showDownload, setShowDownload] = useState(false);
 
   useEffect(() => {
+    let scrollTimeout = null;
+    let scrollCheckInterval = null;
+    let lastScrollTop = 0;
+    let stableCount = 0;
+
     const removeHash = () => {
       if (window.location.hash) {
-        window.history.replaceState(
-          null,
-          "",
-          window.location.pathname + window.location.search
-        );
+        // Clear any existing timeouts/intervals
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+        if (scrollCheckInterval) {
+          clearInterval(scrollCheckInterval);
+        }
+
+        // Reset counters
+        stableCount = 0;
+        lastScrollTop = window.pageYOffset;
+
+        // Wait for smooth scroll to start, then monitor
+        scrollTimeout = setTimeout(() => {
+          // Check scroll position every 100ms
+          scrollCheckInterval = setInterval(() => {
+            const currentScrollTop = window.pageYOffset;
+            
+            // If scroll position is stable (within 1px), increment counter
+            if (Math.abs(currentScrollTop - lastScrollTop) <= 1) {
+              stableCount++;
+              
+              // If stable for 5 checks (500ms), scrolling is complete
+              if (stableCount >= 5) {
+                clearInterval(scrollCheckInterval);
+                scrollCheckInterval = null;
+                window.history.replaceState(
+                  null,
+                  "",
+                  window.location.pathname + window.location.search
+                );
+              }
+            } else {
+              // Still scrolling, reset counter and update last position
+              stableCount = 0;
+              lastScrollTop = currentScrollTop;
+            }
+          }, 100);
+        }, 800); // Wait 800ms for smooth scroll to start
       }
     };
 
     window.addEventListener("hashchange", removeHash);
 
     return () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      if (scrollCheckInterval) {
+        clearInterval(scrollCheckInterval);
+      }
       window.removeEventListener("hashchange", removeHash);
     };
   }, []);
@@ -73,7 +118,7 @@ export default function Header() {
           {/* HAMBURGER */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden flex flex-col gap-1.5 w-6 h-6 justify-center"
+            className="md:hidden flex flex-col gap-1.5 w-6 h-6 justify-center cursor-pointer"
           >
             <span className={`h-0.5 bg-white transition ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
             <span className={`h-0.5 bg-white transition ${isMenuOpen ? "opacity-0" : ""}`} />

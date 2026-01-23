@@ -4,66 +4,106 @@ import { Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
+// Fonts
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
 
+// SEO 
 export const metadata = {
-  // 1. FIX: metadataBase set karein (Error solve ho jayega)
-  metadataBase: new URL('https://wibeit.co'),
+  metadataBase: new URL("https://wibeit.co"),
 
-  title: "WibeIT - Highly Encrypted & Secure Messaging",
-  description: "Experience double layer encrypted chats, calls, and file sharing built for people who want real privacy. Secure messaging with end-to-end encryption.",
+  title: {
+    default: "WibeIT – Secure & Private Messaging App",
+    template: "%s | WibeIT",
+  },
+
+  description:
+    "WibeIT is a secure messaging app with end-to-end encryption for private chats, calls, and file sharing.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://wibeit.co",
+  },
+
   icons: {
     icon: "/favicon.png",
-    icons: {
-      icon: "/favicon.png",
-      apple: "/apple-touch-icon.png",
-    },
+    apple: "/apple-touch-icon.png",
   },
-  alternates: {
-    // 2. FIX: Canonical mein hamesha full URL dena chahiye
-    canonical: 'https://wibeit.co',
-  },
+
   openGraph: {
-    title: "WibeIT - Highly Encrypted & Secure Messaging",
-    description: "Experience double layer encrypted chats, calls, and file sharing built for real privacy.",
+    title: "WibeIT – Secure & Private Messaging App",
+    description:
+      "Private, encrypted messaging with calls and file sharing built for real privacy.",
     url: "https://wibeit.co",
-    type: "website",
     siteName: "WibeIT",
+    type: "website",
     images: [
       {
-        // 3. TIP: .svg social media par kabhi kabhi support nahi hoti, 
-        // Best hai ke 1200x630 ki PNG/JPG use karein.
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "WibeIT - Secure Messaging App",
+        alt: "WibeIT Secure Messaging",
       },
     ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "WibeIT – Secure & Private Messaging",
+    description:
+      "Experience secure chats and calls with end-to-end encryption.",
+    images: ["/og-image.png"],
   },
 };
 
 export default function RootLayout({ children }) {
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+
     name: "WibeIT",
     applicationCategory: "CommunicationApplication",
     operatingSystem: "Android, iOS",
+
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD"
     },
+
     description: "Highly encrypted and secure messaging app with double-layer encryption.",
+
+    keywords: [
+      "secure messaging app",
+      "encrypted chat",
+      "private messaging",
+      "end-to-end encryption",
+      "privacy focused app",
+      "Best Encryptin algorithm 2026",
+      "WibeIT encrypted chatting module"
+    ],
+
     url: "https://wibeit.co",
+
     author: {
       "@type": "Organization",
       name: "Wibeit Technologies"
-    }
+    },
+
+    publisher: {
+      "@type": "Organization",
+      name: "Wibeit Technologies",
+      
+      url: "https://wibeit.co",
+    },
   };
 
   return (
@@ -72,9 +112,12 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={`${poppins.variable} font-sans antialiased`}
       >
+        {/* JSON-LD STRUCTURED DATA */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
         />
 
         {/* <UnderConstruction /> */}
@@ -82,6 +125,7 @@ export default function RootLayout({ children }) {
 
         <main id="main-content">
           {children}
+
           <Toaster
             position="bottom-right"
             toastOptions={{

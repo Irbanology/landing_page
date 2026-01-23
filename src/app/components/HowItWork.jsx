@@ -54,7 +54,7 @@ export default function HowItWorks() {
                 Download The App
               </h4>
               <p className="font-inter text-[15px] leading-[22px] text-white/90">
-                Get Wibelt from the App Store, Google Play, or AppGallery.
+                Get WibeIT from the App Store, Google Play, or AppGallery.
               </p>
             </div>
 

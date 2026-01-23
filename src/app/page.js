@@ -11,26 +11,30 @@ import Blog from "@/app/components/Blog";
 import FAQ from "@/app/components/FAQ";
 import Newsletter from "@/app/components/Newsletter";
 import Footer from "@/app/components/Footer";
+// import ChildSafetyPolicy from "@/app/policies/child-safety/page";
 
+import ScrollToTop from "@/app/components/ScrollToTop";
+import UnderConstruction from "@/app/components/underconstruction";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
-        <Hero />
-        <SecureCommunication />
-        <Showcase />
-        <Section />
-        <Feature />
-        <WhatWeDo />
-        <HowItWork />
-        <ContactForm />
-        <Blog />
-        <FAQ />
-        <Newsletter />
-      </main>
+      <Hero />
+      <SecureCommunication />
+      <Showcase />
+      <Section />
+      <Feature />
+      <WhatWeDo />
+      <HowItWork />
+      <ContactForm />
+      <Blog />
+      <FAQ />
+      <Newsletter />
       <Footer />
+      {/* <ChildSafetyPolicy /> */}
+      {/* <ScrollToTop /> */}
+      {/* <UnderConstruction /> */}
     </>
   );
 }
