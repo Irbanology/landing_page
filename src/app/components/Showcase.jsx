@@ -4,9 +4,10 @@ import Link from "next/link";
 
 export default function Showcase() {
   return (
+    //7:09 Scroll mt 
     <section
       id="showcase"
-      className="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-20 overflow-hidden"
+      className="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-20 overflow-hidden scroll-mt-4"
     >
       <div className="max-w-[1440px] mx-auto">
 
