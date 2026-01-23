@@ -146,12 +146,12 @@ export default function Footer() {
             >
               Privacy Policy
             </Link>
-            <Link
+            {/* <Link
               href="/terms-of-service"
               className="block sm:inline hover:opacity-80 transition"
             >
               Terms of Service
-            </Link>
+            </Link> */}
           </p>
 
           {/* RIGHT SIDE */}
