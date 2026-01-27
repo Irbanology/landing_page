@@ -69,6 +69,7 @@ export default function DownloadModal({ open, onClose }) {
               border border-white/15
               text-white/90
               hover:bg-[#FE5800]
+              transition
             "
           >
             <FaGooglePlay size={18} />
@@ -87,6 +88,7 @@ export default function DownloadModal({ open, onClose }) {
               border border-white/15
               text-white/90
               hover:bg-[#FE5800]
+              transition
             "
           >
             <FaApple size={18} />
@@ -105,6 +107,7 @@ export default function DownloadModal({ open, onClose }) {
               border border-white/15
               text-white/90
               hover:bg-[#FE5800]
+              transition
             "
           >
             <SiAppgallery size={18} />
