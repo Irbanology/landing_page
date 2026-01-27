@@ -46,10 +46,6 @@ export default function DownloadModal({ open, onClose }) {
             p-6 sm:p-7
             text-white
             shadow-2xl
-            transform transition-all duration-300
-            ${closing
-              ? "opacity-0 scale-95 translate-y-2"
-              : "opacity-100 scale-100 translate-y-0"}
           `}
         >
           {/* TITLE */}
@@ -73,7 +69,6 @@ export default function DownloadModal({ open, onClose }) {
               border border-white/15
               text-white/90
               hover:bg-[#FE5800]
-              transition
             "
           >
             <FaGooglePlay size={18} />
@@ -92,8 +87,6 @@ export default function DownloadModal({ open, onClose }) {
               border border-white/15
               text-white/90
               hover:bg-[#FE5800]
-             
-              transition
             "
           >
             <FaApple size={18} />
@@ -112,8 +105,6 @@ export default function DownloadModal({ open, onClose }) {
               border border-white/15
               text-white/90
               hover:bg-[#FE5800]
-              
-              transition
             "
           >
             <SiAppgallery size={18} />
