@@ -42,8 +42,14 @@ export default function Showcase() {
             </div>
 
             {/* Phone Image - Responsive Position */}
-            <div className="relative mt-8 md:mt-0 flex-1 h-[350px] md:h-full">
-              <div className="absolute -bottom-12 md:-bottom-24 -right-4 md:right-0 w-[110%] md:w-full h-full lg:w-full">
+            <div className="mt-8 md:mt-0 flex-1 md:h-full w-[500px]">
+              <div
+                className="absolute bottom-0 right-0 
+    w-[500px] h-[500px]
+    sm:w-[520px] sm:h-[520px]
+    md:w-[560px] md:h-[560px]
+    lg:w-[650px] lg:h-[650px]"
+              >
                 <Image
                   src="/login_Ui.png"
                   alt="Login Interface"

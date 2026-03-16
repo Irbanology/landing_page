@@ -6,21 +6,21 @@ const blogs = [
     id: 1,
     image: "/blog-1.png",
     tag: "Encryption",
-    title: "Why Encryption Is Important and Why We Need It More Than Ever",
+    title: "The Best Encrypted Messaging App for Privacy in 2026",
   },
   {
     id: 2,
-    image: "/blog-2.png",
+    image: "/blog-2.jpeg",
     tag: "Messaging Apps",
     title:
-      "The Best Encryption Algorithm in 2026: How Secure Messaging Apps Protect Your Data",
+      "Meet WibeIT the New Privacy First Messaging App",
   },
   {
     id: 3,
-    image: "/blog-3.png",
+    image: "/blog-3.jpg",
     tag: "Digital Life",
     title:
-      "How encryption works and we can use it our daily life",
+      "How WibeIT Protects Your Privacy Inside the Secure Messaging Technology",
   },
 ];
 

@@ -3,8 +3,7 @@ export default function robots() {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/admin/',
-            disallow: '/test/',
+            disallow: ['/admin/', '/test/'],
         },
         sitemap: 'https://wibeit.co/sitemap.xml',
     }
