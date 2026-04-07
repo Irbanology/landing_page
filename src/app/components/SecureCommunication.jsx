@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Container from "@/app/components/Container";
 
 export default function SecureCommunication() {
   return (
     <section className="relative w-full bg-black overflow-hidden py-24">
-      <div className="relative max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-16">
+      <Container className="relative flex flex-col lg:flex-row items-center justify-between gap-16">
         
         {/* LEFT CONTENT - Forced z-20 to stay above background on mobile */}
         <div className="relative z-20 w-full lg:max-w-[600px] text-left">
@@ -95,7 +96,7 @@ export default function SecureCommunication() {
           </div>
         </div>
 
-      </div>
+      </Container>
     </section>
   );
 }

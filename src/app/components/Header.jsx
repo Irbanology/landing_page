@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import DownloadModal from "@/app/components/DownloadModal";
+import Container from "@/app/components/Container";
 
 
 
@@ -78,7 +79,7 @@ export default function Header() {
 
   return (
     <header id="home" className="w-full h-[70px] border-b border-white/10 bg-black sticky top-0 z-50"  >
-      <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-6 md:px-10">
+      <Container className="h-full flex items-center justify-between">
 
         {/* LOGO */}
         <Link href="/#home" className="flex items-center gap-2">
@@ -125,7 +126,7 @@ export default function Header() {
             <span className={`h-0.5 bg-white transition ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </div>
-      </div>
+      </Container>
 
       {/* MOBILE MENU */}
       <div

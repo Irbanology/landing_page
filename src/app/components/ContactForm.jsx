@@ -4,6 +4,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Container from "@/app/components/Container";
 
 export default function ContactForm() {
     const [checked, setChecked] = useState(false);
@@ -47,9 +48,13 @@ export default function ContactForm() {
             id="contact"
             className="w-full bg-white py-20 lg:py-28"
         >
-            <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
+            <h1 className="text-center font-bold text-black text-[32px] sm:text-[42px] md:text-[56px] lg:text-[68px] tracking-tight leading-[1.1] mb-10">
+                Contact Us
+            </h1>
+
+            <Container>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* LEFT IMAGE */}
                     <div className="w-full flex justify-center">
                         <div className="relative w-full max-w-[420px] aspect-[420/520]">
@@ -183,7 +188,7 @@ export default function ContactForm() {
 
                     </form>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

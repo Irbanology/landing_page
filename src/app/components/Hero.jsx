@@ -4,6 +4,7 @@ import DownloadModal from "@/app/components/DownloadModal";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import Container from "@/app/components/Container";
 
 export default function Hero() {
   // const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Hero() {
       />
 
       {/* 50/50 Grid Container */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 items-center">
+      <Container className="relative z-10 grid lg:grid-cols-2 items-center">
 
         {/* Left Content Half */}
         <div className="relative z-20 space-y-6 lg:space-y-8 py-10 lg:py-20 text-center lg:text-left">
@@ -64,12 +65,12 @@ export default function Hero() {
               alt="App preview"
               fill
               priority
-              className="object-contain object-bottom lg:object-center scale-110 lg:scale-110"
+              className="object-contain object-center scale-100 lg:scale-110 lg:translate-x-10"
             />
           </div>
         </div>
 
-      </div>
+      </Container>
       <DownloadModal
         open={showDownload}
         onClose={() => setShowDownload(false)}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Container from "@/app/components/Container";
 
 export default function WhatWeDo() {
   return (
@@ -6,7 +7,7 @@ export default function WhatWeDo() {
       id="what-we-do"
       className="w-full bg-white py-20 lg:py-28"
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
+      <Container>
         
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -71,7 +72,7 @@ export default function WhatWeDo() {
           </div>
 
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

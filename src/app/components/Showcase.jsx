@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/app/components/Container";
 
 
 export default function Showcase() {
@@ -7,9 +8,9 @@ export default function Showcase() {
     //7:09 Scroll mt 
     <section
       id="showcase"
-      className="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-20 overflow-hidden scroll-mt-4"
+      className="bg-white py-16 md:py-24 overflow-hidden scroll-mt-4"
     >
-      <div className="max-w-[1440px] mx-auto">
+      <Container>
 
         {/* HEADER SECTION - Fluid Typography Fixed */}
         <div className="mb-20 md:mb-32 relative">
@@ -166,7 +167,7 @@ export default function Showcase() {
           </div>
 
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

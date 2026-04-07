@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiTwitter, FiFacebook, FiMail } from "react-icons/fi";
 import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
+import Container from "@/app/components/Container";
 
 /* =======================
    FOOTER LINKS CONFIG
@@ -31,7 +32,7 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="w-full bg-black text-white">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-[80px] pt-20 lg:pt-[112px]">
+      <Container className="pt-20 lg:pt-[112px]">
 
         {/* ================= TOP SECTION ================= */}
         <div className="flex flex-col lg:flex-row gap-16 lg:justify-between">
@@ -184,7 +185,7 @@ export default function Footer() {
 
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

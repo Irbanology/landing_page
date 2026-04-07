@@ -1,10 +1,20 @@
+import Container from "@/app/components/Container";
+import {
+  ArrowLeftRight,
+  Zap,
+  ShieldCheck,
+  Phone,
+  Key,
+  MonitorSmartphone,
+} from "lucide-react";
+
 export default function Features() {
   return (
     <section
       id="features"
       className="bg-white w-full py-[140px]"
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px]">
+      <Container>
 
         {/* TOP CONTENT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-[120px] items-start">
@@ -28,29 +38,36 @@ export default function Features() {
             {
               title: "P2P",
               desc: "Peer-to-peer delivery keeps messages as close to direct as possible between you and the person you are talking to, reducing unnecessary stops along the way.",
+              icon: ArrowLeftRight,
             },
             {
               title: "Fast & Reliable Messaging",
               desc: "Messages send and sync quickly, even on unstable networks, so conversations feel live instead of laggy.",
+              icon: Zap,
             },
             {
               title: "Privacy First",
               desc: "The product is designed so that privacy is the default, not a setting you hunt for. Minimal data is collected.",
+              icon: ShieldCheck,
             },
             {
               title: "Secure Calls & Media Sharing",
               desc: "Voice calls, photos, videos, and documents all travel through the same protected channel as your text messages.",
+              icon: Phone,
             },
             {
               title: "Two-Factor Authentication (2FA)",
               desc: "Optional 2FA adds an extra lock to your account by requiring both your password and a one-time code.",
+              icon: Key,
             },
             {
               title: "Cross-Platform Availability",
               desc: "Available on Android and iOS, with secure access through Google Play Store, Apple App Store, and Huawei AppGallery.",
+              icon: MonitorSmartphone,
             },
           ].map((item, index) => (
-            <div key={index} className="relative text-center px-4">
+            <div key={index} className="relative flex flex-col items-center text-center px-4">
+              <item.icon className="w-6 h-6 text-orange-500 mb-4" />
 
               {/* Title */}
               <h4 className="font-inter text-[18px] font-semibold text-black mb-4">
@@ -71,7 +88,7 @@ export default function Features() {
           ))}
 
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

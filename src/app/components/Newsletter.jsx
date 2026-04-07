@@ -1,19 +1,20 @@
 import { FiArrowRight } from "react-icons/fi";
+import Container from "@/app/components/Container";
 
 export default function Newsletter() {
   return (
-    <section 
+    <section
       className="w-full h-auto lg:h-[480.78px] flex items-center overflow-hidden"
       style={{
         background: "linear-gradient(90deg, #939393 0%, #808080 45%, #FE5800 100%)",
       }}
     >
-      <div className="max-w-[1440px] mx-auto w-full h-full px-6 md:px-10 lg:px-[80px] py-16 lg:py-[80px] flex flex-col lg:flex-row justify-between items-stretch">
-        
+      <Container className="h-full py-16 lg:py-[80px] flex flex-col lg:flex-row justify-between items-stretch">
+
         {/* LEFT CONTENT: Vertical space between Title and 'Stay Connected' */}
         <div className="flex flex-col justify-between w-full lg:w-1/2 mb-12 lg:mb-0">
           <h2 className="font-montserrat text-white text-[42px] md:text-[56px] lg:text-[64px] font-normal leading-[1.1] tracking-tight">
-            Add your email for <br /> Regular updates
+            Get updates   <br /> delivered to your inbox
           </h2>
 
           <p className="font-montserrat text-white text-[18px] md:text-[20px] font-normal mt-10 lg:mt-0">
@@ -24,7 +25,7 @@ export default function Newsletter() {
         {/* RIGHT CONTENT: Form Aligned to the bottom right area */}
         <div className="w-full lg:w-[500px] xl:w-[600px] flex flex-col justify-end">
           <form className="w-full space-y-12">
-            
+
             {/* First name field */}
             <div className="group">
               <label htmlFor="newsletter-firstname" className="block text-white text-[16px] mb-2 font-montserrat opacity-90">
@@ -81,7 +82,7 @@ export default function Newsletter() {
           </form>
         </div>
 
-      </div>
+      </Container>
     </section>
   );
 }

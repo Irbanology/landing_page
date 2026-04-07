@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi"; 3
 import Image from "next/image";
+import Container from "@/app/components/Container";
 
 
 const faqs = [
@@ -52,7 +53,7 @@ export default function FAQ() {
       />
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20">
+      <Container className="relative z-10">
         <h2 className="text-center font-montserrat text-white text-[32px] md:text-[40px] font-bold mb-20 tracking-[0.1em] uppercase">
           FREQUENTLY ASKED QUESTIONS
         </h2>
@@ -104,7 +105,7 @@ export default function FAQ() {
             );
           })}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

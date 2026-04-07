@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/app/components/Container";
 
 export default function HowItWorks() {
   return (
     /* SECTION: Background black rahega aur padding-y responsive taaki mobile par saaf dikhe */
-    <section id="howitworks" className=" w-full bg-black min-h-[1056px] flex items-center justify-center px-6 py-10 lg:py-0 overflow-hidden">
+    <section id="howitworks" className="w-full bg-black min-h-[1056px] flex items-center justify-center py-10 lg:py-0 overflow-hidden">
 
       {/* OUTER CONTAINER: Locked to 1440px frame */}
-      <div className="w-full max-w-[1440px] flex justify-center">
+      <Container className="flex justify-center">
 
         {/* MAIN CARD: 
             1. py-20 (Mobile) aur md:py-24 (Desktop) for breathing space.
@@ -98,7 +99,7 @@ export default function HowItWorks() {
 
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/app/components/Container";
 
 const blogs = [
   {
@@ -29,7 +30,7 @@ export default function Blog() {
     <section
       id="blog"
       className="w-full bg-white py-24 blog">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <Container>
 
         {/* TITLE */}
         <h2 className="text-center font-inter text-[32px] sm:text-[40px] font-semibold text-black mb-16">
@@ -86,7 +87,7 @@ export default function Blog() {
           </button>
         </div>
 
-      </div>
+      </Container>
     </section>
   );
 }
