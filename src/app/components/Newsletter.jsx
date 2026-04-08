@@ -14,7 +14,7 @@ export default function Newsletter() {
         {/* LEFT CONTENT: Vertical space between Title and 'Stay Connected' */}
         <div className="flex flex-col justify-between w-full lg:w-1/2 mb-12 lg:mb-0">
           <h2 className="font-montserrat text-white text-[42px] md:text-[56px] lg:text-[64px] font-normal leading-[1.1] tracking-tight">
-            Get updates   <br /> delivered to your inbox
+          Join our newsletter   <br />  for the latest updates
           </h2>
 
           <p className="font-montserrat text-white text-[18px] md:text-[20px] font-normal mt-10 lg:mt-0">
