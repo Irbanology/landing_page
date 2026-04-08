@@ -1,7 +1,47 @@
+ "use client";
+
+import { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import Container from "@/app/components/Container";
 
 export default function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const trimmedEmail = email.trim();
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    if (!trimmedEmail) {
+      setErrorMessage("Email is required.");
+      return;
+    }
+
+    if (!isValidEmail(trimmedEmail)) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setEmail("");
+      setSuccessMessage("You're subscribed!");
+    } catch (error) {
+      setErrorMessage("Subscription failed. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       className="w-full h-auto lg:h-[480.78px] flex items-center overflow-hidden"
@@ -24,7 +64,7 @@ export default function Newsletter() {
 
         {/* RIGHT CONTENT: Form Aligned to the bottom right area */}
         <div className="w-full lg:w-[500px] xl:w-[600px] flex flex-col justify-end">
-          <form className="w-full space-y-12">
+          <form className="w-full space-y-12" onSubmit={handleSubmit}>
 
             {/* First name field */}
             <div className="group">
@@ -57,6 +97,14 @@ export default function Newsletter() {
                 <input
                   id="newsletter-email"
                   type="email"
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                    if (errorMessage) setErrorMessage("");
+                    if (successMessage) setSuccessMessage("");
+                  }}
+                  aria-invalid={Boolean(errorMessage)}
+                  aria-describedby="newsletter-feedback"
                   className="
                     w-full
                     bg-transparent
@@ -72,11 +120,24 @@ export default function Newsletter() {
                 />
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="absolute right-0 pb-3 text-white transition-transform duration-300 hover:translate-x-1"
                 >
-                  <FiArrowRight size={28} strokeWidth={1.5} />
+                  {isSubmitting ? (
+                    <span className="text-[14px] leading-none">Submitting...</span>
+                  ) : (
+                    <FiArrowRight size={28} strokeWidth={1.5} />
+                  )}
                 </button>
               </div>
+              <p
+                id="newsletter-feedback"
+                className={`mt-3 text-[14px] font-montserrat ${
+                  errorMessage ? "text-red-200" : "text-white/90"
+                }`}
+              >
+                {errorMessage || successMessage}
+              </p>
             </div>
 
           </form>
