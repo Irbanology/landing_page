@@ -55,17 +55,17 @@ export default function Hero() {
         </div>
 
         {/* Right Content Half - Phone Mockup */}
-        <div className="relative flex justify-end items-center h-[500px] md:h-[700px] lg:h-[900px]">
+        <div className="relative flex justify-center lg:justify-end items-center h-[600px] sm:h-[680px] md:h-[780px] lg:h-[980px]">
           {/* On Desktop: We use absolute positioning to pull the phone 
             towards the center (left-[-15%]) to "close the gap" per your Figma files 
           */}
-          <div className="absolute lg:relative w-[140%] lg:w-[150%] h-full lg:left-[-15%] z-10 opacity-100 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
+          <div className="absolute lg:relative w-[175%] sm:w-[165%] md:w-[160%] lg:w-[185%] h-full left-1/2 -translate-x-1/2 lg:left-[-8%] lg:translate-x-0 xl:left-[-2%] z-10 opacity-100 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
             <Image
-              src="/iPhone.svg"
+              src="/iPhone.png"
               alt="App preview"
               fill
               priority
-              className="object-contain object-center scale-100 lg:scale-110 lg:translate-x-10"
+              className="object-contain object-center lg:object-right scale-[1.18] sm:scale-[1.16] md:scale-[1.18] lg:scale-[1.24] xl:scale-[1.3] lg:translate-x-12 xl:translate-x-16"
             />
           </div>
         </div>

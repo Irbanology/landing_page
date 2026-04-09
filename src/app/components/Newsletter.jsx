@@ -5,36 +5,75 @@ import { FiArrowRight } from "react-icons/fi";
 import Container from "@/app/components/Container";
 
 export default function Newsletter() {
+  const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [nameErrorMessage, setNameErrorMessage] = useState("");
+  const [nameTouched, setNameTouched] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
+  const [submitAttempted, setSubmitAttempted] = useState(false);
 
   const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  const hasOnlyLettersAndSpaces = (value) => /^[a-zA-Z\s]*$/.test(value);
+  const trimmedEmail = email.trim();
+  const trimmedFirstName = firstName.trim();
+
+  const getNameError = () => {
+    if (!trimmedFirstName) return "Please enter letters only";
+    if (!hasOnlyLettersAndSpaces(firstName)) return "Please enter letters only";
+    return "";
+  };
+
+  const getEmailError = () => {
+    if (!trimmedEmail) return "Email is required.";
+    if (!isValidEmail(trimmedEmail)) return "Please enter a valid email address";
+    return "";
+  };
+
+  const emailError = getEmailError();
+  const nameError = getNameError();
+  const shouldShowNameError = submitAttempted || nameTouched;
+  const shouldShowEmailError = submitAttempted || emailTouched;
+
+  const handleNameChange = (event) => {
+    const value = event.target.value;
+    if (hasOnlyLettersAndSpaces(value)) {
+      setFirstName(value);
+      if (successMessage) setSuccessMessage("");
+    }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSubmitAttempted(true);
+    setNameTouched(true);
+    setEmailTouched(true);
 
-    const trimmedEmail = email.trim();
     setSuccessMessage("");
+    if (nameError) {
+      setNameErrorMessage(nameError);
+      return;
+    }
+    setNameErrorMessage("");
+
+    if (emailError) {
+      setErrorMessage(emailError);
+      return;
+    }
     setErrorMessage("");
-
-    if (!trimmedEmail) {
-      setErrorMessage("Email is required.");
-      return;
-    }
-
-    if (!isValidEmail(trimmedEmail)) {
-      setErrorMessage("Please enter a valid email address.");
-      return;
-    }
 
     setIsSubmitting(true);
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
+      setFirstName("");
       setEmail("");
-      setSuccessMessage("You're subscribed!");
+      setSuccessMessage("You're subscribed");
+      setNameTouched(false);
+      setEmailTouched(false);
+      setSubmitAttempted(false);
     } catch (error) {
       setErrorMessage("Subscription failed. Please try again.");
     } finally {
@@ -74,18 +113,34 @@ export default function Newsletter() {
               <input
                 id="newsletter-firstname"
                 type="text"
-                className="
+                value={firstName}
+                onChange={handleNameChange}
+                onBlur={() => {
+                  setNameTouched(true);
+                  setNameErrorMessage(getNameError());
+                }}
+                aria-invalid={Boolean(shouldShowNameError && nameError)}
+                className={`
                   w-full
                   bg-transparent
-                  border-b border-white/80
+                  border-b
+                  ${shouldShowNameError && nameError ? "border-red-300" : "border-white/80"}
                   text-white
                   text-[18px]
                   outline-none
                   pb-3
+                  truncate
+                  overflow-hidden
+                  whitespace-nowrap
                   focus:border-white
                   transition-colors
-                "
+                `}
               />
+              {shouldShowNameError && nameError && (
+                <p className="mt-3 text-[14px] font-montserrat text-red-200">
+                  {nameErrorMessage || nameError}
+                </p>
+              )}
             </div>
 
             {/* Email field with Arrow Icon */}
@@ -100,15 +155,19 @@ export default function Newsletter() {
                   value={email}
                   onChange={(event) => {
                     setEmail(event.target.value);
-                    if (errorMessage) setErrorMessage("");
                     if (successMessage) setSuccessMessage("");
                   }}
-                  aria-invalid={Boolean(errorMessage)}
+                  onBlur={() => {
+                    setEmailTouched(true);
+                    setErrorMessage(getEmailError());
+                  }}
+                  aria-invalid={Boolean(shouldShowEmailError && emailError)}
                   aria-describedby="newsletter-feedback"
-                  className="
+                  className={`
                     w-full
                     bg-transparent
-                    border-b border-white/80
+                    border-b
+                    ${shouldShowEmailError && emailError ? "border-red-300" : "border-white/80"}
                     text-white
                     text-[18px]
                     outline-none
@@ -116,7 +175,7 @@ export default function Newsletter() {
                     pr-10
                     focus:border-white
                     transition-colors
-                  "
+                  `}
                 />
                 <button
                   type="submit"
@@ -133,10 +192,10 @@ export default function Newsletter() {
               <p
                 id="newsletter-feedback"
                 className={`mt-3 text-[14px] font-montserrat ${
-                  errorMessage ? "text-red-200" : "text-white/90"
+                  shouldShowEmailError && emailError ? "text-red-200" : "text-white/90"
                 }`}
               >
-                {errorMessage || successMessage}
+                {(shouldShowEmailError && emailError) || errorMessage || successMessage}
               </p>
             </div>
 

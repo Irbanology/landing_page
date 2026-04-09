@@ -20,7 +20,7 @@ const footerLinks = {
   policy: [
     { label: "Privacy Policy", href: "/policies/privacy_policy" },
     { label: "Child Safety", href: "/policies/child_safety" },
-    { label: "Legal", href: "/policies/child_safety" },
+    { label: "Legal", href: "/policies/legal" },
     { label: "Delete Account", href: "https://wibex-dd474.firebaseapp.com/" }
   ],
   company: [
@@ -43,9 +43,9 @@ export default function Footer() {
               <Image
                 src="/Logo.svg"
                 alt="WibeIT"
-                width={147}
+                width={150}
                 height={102}
-                className="cursor-pointer"
+                className="cursor-pointer "
               />
             </Link>
           </div>
@@ -142,7 +142,7 @@ export default function Footer() {
           <p className="font-inter text-[13px] text-white/65 text-center sm:text-left">
             © 2025 Wibeit Technologies. All right reserved.
             <Link
-              href="/privacy-policy"
+              href="/policies/privacy_policy"
               className="block sm:inline sm:mx-6 hover:opacity-80 transition"
             >
               Privacy Policy

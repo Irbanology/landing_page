@@ -67,7 +67,8 @@ export default function Features() {
             },
           ].map((item, index) => (
             <div key={index} className="relative flex flex-col items-center text-center px-4">
-              <item.icon className="w-6 h-6 text-orange-500 mb-4" />
+              {/* Icon change 6 to 8 */}
+              <item.icon className="w-8 h-8 text-orange-500 mb-4" />
 
               {/* Title */}
               <h4 className="font-inter text-[18px] font-semibold text-black mb-4">
