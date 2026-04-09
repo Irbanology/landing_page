@@ -8,20 +8,21 @@ const blogs = [
     image: "/blog-1.png",
     tag: "Encryption",
     title: "The Best Encrypted Messaging App for Privacy in 2026",
+    link: 'https://medium.com/@wibeIT/the-best-encrypted-messaging-app-for-privacy-in-2026-e8a3b1b2f85e'
   },
   {
     id: 2,
     image: "/blog-2.jpeg",
     tag: "Messaging Apps",
-    title:
-      "Meet WibeIT the New Privacy First Messaging App",
+    title: "Meet WibeIT the New Privacy First Messaging App",
+    link: "https://medium.com/@wibeIT/meet-wibeit-the-new-privacy-first-messaging-app-60b7aa581d6d"
   },
   {
     id: 3,
     image: "/blog-3.jpg",
     tag: "Digital Life",
-    title:
-      "How WibeIT Protects Your Privacy Inside the Secure Messaging Technology",
+    title: "How WibeIT Protects Your Privacy Inside the Secure Messaging Technology",
+    link: "https://medium.com/@wibeIT/how-wibeit-protects-your-privacy-inside-the-secure-messaging-technology-5e19b38ac4d6"
   },
 ];
 
@@ -73,18 +74,22 @@ export default function Blog() {
               </h3>
 
               {/* READ */}
-              <span className="text-[#FE5800] text-[14px] font-medium cursor-pointer hover:underline">
-                Read
-              </span>
+              <Link rel="stylesheet" href={blog.link} target="_blank">
+                <span className="text-[#FE5800] text-[14px] font-medium cursor-pointer hover:underline">
+                  Read
+                </span>
+              </Link>
             </div>
           ))}
         </div>
 
         {/* CTA */}
         <div className="flex justify-center mt-16">
-          <button className="cursor-pointer rounded-full bg-[#FE5800] text-white text-[14px] font-medium px-8 py-3 hover:bg-[#ff6a1a] transition">
-            Read the blog
-          </button>
+          <Link href="https://medium.com/@wibeIT" target="_blank" rel="noopener noreferrer">
+            <button className="cursor-pointer rounded-full bg-[#FE5800] text-white text-[14px] font-medium px-8 py-3 hover:bg-[#ff6a1a] transition">
+              Read the blog
+            </button>
+          </Link>
         </div>
 
       </Container>

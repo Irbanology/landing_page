@@ -27,7 +27,8 @@ export default function Hero() {
         {/* Left Content Half */}
         <div className="relative z-20 space-y-6 lg:space-y-8 py-10 lg:py-20 text-center lg:text-left">
           <h1 className="font-bold text-[48px] md:text-[60px] lg:text-[72px] leading-[1.1] lg:leading-[85px] tracking-[-0.02em] max-w-[684px] mx-auto lg:mx-0">
-            Highly Encrypted & <br /> Secure
+            {/* Highly Encrypted & <br /> Secure */}
+            Stop Being Tracked. Start Chatting Securely.
           </h1>
 
           <p className="max-w-[585px] mx-auto lg:mx-0 text-white/70 text-[18px] lg:text-[22px] leading-[26px] lg:leading-[30px] font-normal">
@@ -59,13 +60,13 @@ export default function Hero() {
           {/* On Desktop: We use absolute positioning to pull the phone 
             towards the center (left-[-15%]) to "close the gap" per your Figma files 
           */}
-          <div className="absolute lg:relative w-[175%] sm:w-[165%] md:w-[160%] lg:w-[185%] h-full left-1/2 -translate-x-1/2 lg:left-[-8%] lg:translate-x-0 xl:left-[-2%] z-10 opacity-100 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
+          <div className="absolute lg:relative w-[175%] sm:w-[165%] md:w-[160%] lg:w-[205%] xl:w-[215%] h-full left-1/2 -translate-x-1/2 lg:left-[-14%] lg:translate-x-0 xl:left-[-8%] z-10 opacity-100 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
             <Image
               src="/iPhone.png"
               alt="App preview"
               fill
               priority
-              className="object-contain object-center lg:object-right scale-[1.18] sm:scale-[1.16] md:scale-[1.18] lg:scale-[1.24] xl:scale-[1.3] lg:translate-x-12 xl:translate-x-16"
+              className="object-contain object-center lg:object-right scale-[1.18] sm:scale-[1.16] md:scale-[1.18] lg:scale-[1.34] xl:scale-[1.42] lg:translate-x-16 xl:translate-x-20"
             />
           </div>
         </div>
