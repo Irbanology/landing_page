@@ -60,13 +60,13 @@ export default function Hero() {
           {/* On Desktop: We use absolute positioning to pull the phone 
             towards the center (left-[-15%]) to "close the gap" per your Figma files 
           */}
-          <div className="absolute lg:relative w-[175%] sm:w-[165%] md:w-[160%] lg:w-[205%] xl:w-[215%] h-full left-1/2 -translate-x-1/2 lg:left-[-14%] lg:translate-x-0 xl:left-[-8%] z-10 opacity-100 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
+          <div className="absolute lg:relative w-[185%] sm:w-[175%] md:w-[170%] lg:w-[210%] xl:w-[225%] h-full left-1/2 -translate-x-1/2 lg:left-[-14%] lg:translate-x-0 xl:left-[-8%] z-10 opacity-100 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
             <Image
               src="/iPhone.png"
               alt="App preview"
               fill
               priority
-              className="object-contain object-center lg:object-right scale-[1.18] sm:scale-[1.16] md:scale-[1.18] lg:scale-[1.34] xl:scale-[1.42] lg:translate-x-16 xl:translate-x-20"
+              className="object-contain object-center lg:object-right scale-[1.24] sm:scale-[1.22] md:scale-[1.25] lg:scale-[1.45] xl:scale-[1.58] lg:translate-x-20 xl:translate-x-28"
             />
           </div>
         </div>
