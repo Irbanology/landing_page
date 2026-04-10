@@ -49,7 +49,7 @@ export default function Showcase() {
    w-[600px] h-[500px]  sm:w-[620px] sm:h-[520px] md:w-[660px] md:h-[560px] lg:w-[750px] lg:h-[650px]">
 
               <Image
-                src="/Login_Ui.png"
+                src="/Login_ui.png"
                 alt="Login Interface"
                 fill
                 priority
