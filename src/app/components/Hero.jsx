@@ -66,7 +66,11 @@ export default function Hero() {
               alt="App preview"
               fill
               priority
-              className="object-contain object-center lg:object-right scale-[1.24] sm:scale-[1.22] md:scale-[1.25] lg:scale-[1.45] xl:scale-[1.58] lg:translate-x-20 xl:translate-x-28"
+              className="object-contain object-center lg:object-right scale-[1.50] 
+              sm:scale-[1.20]
+md:scale-[1.30]
+lg:scale-[1.90] 
+xl:scale-[2.10] lg:translate-x-20 xl:translate-x-28"
             />
           </div>
         </div>

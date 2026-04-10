@@ -87,10 +87,50 @@ export default function Legalpolicy() {
             </p>
 
             <ul className="list-disc pl-6 space-y-2">
-              <li>X: x.com/WibeIT</li>
-              <li>Instagram: www.instagram.com/wibe.it/</li>
-              <li>Facebook: Wibeit</li>
-              <li>Telegram: t.me/wibeitapplication</li>
+              <li>
+                X:{" "}
+                <a
+                  href="https://x.com/WibeIT"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#FE5800] hover:text-black transition-colors duration-200 cursor-pointer"
+                >
+                  x.com/WibeIT
+                </a>
+              </li>
+              <li>
+                Instagram:{" "}
+                <a
+                  href="https://www.instagram.com/wibe.it/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#FE5800] hover:text-black transition-colors duration-200 cursor-pointer"
+                >
+                  www.instagram.com/wibe.it/
+                </a>
+              </li>
+              <li>
+                Facebook:{" "}
+                <a
+                  href="https://www.facebook.com/people/Wibeit/61581175611436/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#FE5800] hover:text-black transition-colors duration-200 cursor-pointer"
+                >
+                  https://www.facebook.com/people/Wibeit/61581175611436/
+                </a>
+              </li>
+              <li>
+                Telegram:{" "}
+                <a
+                  href="https://t.me/wibeitapplication"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#FE5800] hover:text-black transition-colors duration-200 cursor-pointer"
+                >
+                  t.me/wibeitapplication
+                </a>
+              </li>
             </ul>
 
             <p className="mt-4">
