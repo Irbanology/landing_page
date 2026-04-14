@@ -42,21 +42,18 @@ export default function Showcase() {
               </p>
             </div>
 
-            {/* Phone Image - Responsive Position */}
-            <div className="mt-8 md:mt-0 flex-1 md:h-full w-[500px]">
-              <div
-                className="absolute bottom-0 right-0 
-   w-[600px] h-[500px]  sm:w-[620px] sm:h-[520px] md:w-[660px] md:h-[560px] lg:w-[750px] lg:h-[650px]">
-
+            {/* Phone Image - Matches lower card responsive behavior */}
+            <div
+              className="absolute bottom-0 right-0 w-[360px] h-[360px] sm:w-[620px] sm:h-[520px] md:w-[660px] md:h-[560px] lg:w-[750px] lg:h-[650px]"
+            >
               <Image
-                src="/login_Ui.png"
+                src="/login_screen.png"
                 alt="Login Interface"
                 fill
                 priority
                 className="object-contain object-right-bottom"
               />
             </div>
-          </div>
         </div>
 
         {/* BOX 2: Upcoming features? - 5/12 Columns */}

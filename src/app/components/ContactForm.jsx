@@ -9,6 +9,59 @@ import countryList from "react-select-country-list";
 import toast from "react-hot-toast";
 import Container from "@/app/components/Container";
 
+const TERRITORY_CODE_TO_PRIMARY = {
+    UM: "US",
+    VI: "US",
+    AS: "US",
+    GU: "US",
+    MP: "US",
+    PR: "US",
+    VG: "GB",
+    IO: "GB",
+    HK: "CN",
+    MO: "CN",
+    RE: "FR",
+    GF: "FR",
+    GP: "FR",
+    MQ: "FR",
+    YT: "FR",
+};
+
+const EXCLUDED_COUNTRY_CODES = new Set([
+    "UM",
+    "VI",
+    "AS",
+    "GU",
+    "MP",
+    "PR",
+    "VG",
+    "IO",
+    "HK",
+    "MO",
+    "RE",
+    "GF",
+    "GP",
+    "MQ",
+    "YT",
+]);
+
+const DIAL_CODE_PRIMARY_COUNTRY = {
+    "1": "US",
+    "7": "RU",
+    "39": "IT",
+    "44": "GB",
+    "47": "NO",
+    "61": "AU",
+};
+
+function normalizeCountryCode(rawCode, dialCode) {
+    const upperCode = (rawCode || "").toUpperCase();
+    const mappedFromTerritory = TERRITORY_CODE_TO_PRIMARY[upperCode];
+    if (mappedFromTerritory) return mappedFromTerritory;
+    const mappedFromDial = DIAL_CODE_PRIMARY_COUNTRY[String(dialCode || "")];
+    return mappedFromDial || upperCode || "US";
+}
+
 export default function ContactForm() {
     const [checked, setChecked] = useState(false);
     const [error, setError] = useState("");
@@ -24,10 +77,20 @@ export default function ContactForm() {
         setIsMounted(true);
     }, []);
 
-    const countryOptions = useMemo(() => countryList().getData(), []);
+    const countryOptions = useMemo(() => {
+        const allCountries = countryList().getData();
+        return allCountries.filter((country) => !EXCLUDED_COUNTRY_CODES.has(country.value));
+    }, []);
     const selectedCountryOption = countryOptions.find(
         (option) => option.value === selectedCountry
     );
+
+    useEffect(() => {
+        if (!countryOptions.some((option) => option.value === selectedCountry)) {
+            setSelectedCountry("US");
+            setPhoneCountry("US");
+        }
+    }, [countryOptions, selectedCountry]);
 
     const Option = (props) => (
         <components.Option {...props}>
@@ -167,8 +230,11 @@ export default function ContactForm() {
                                         value={phoneValue}
                                         onChange={(value, countryData) => {
                                             setPhoneValue(value);
-                                            if (countryData?.countryCode) {
-                                                const normalizedCountry = countryData.countryCode.toUpperCase();
+                                            if (countryData?.countryCode || countryData?.dialCode) {
+                                                const normalizedCountry = normalizeCountryCode(
+                                                    countryData?.countryCode,
+                                                    countryData?.dialCode
+                                                );
                                                 setPhoneCountry(normalizedCountry);
                                                 setSelectedCountry(normalizedCountry);
                                             }
@@ -223,8 +289,9 @@ export default function ContactForm() {
                                     value={selectedCountryOption || null}
                                     onChange={(option) => {
                                         if (!option) return;
-                                        setSelectedCountry(option.value);
-                                        setPhoneCountry(option.value);
+                                        const normalizedCountry = normalizeCountryCode(option.value);
+                                        setSelectedCountry(normalizedCountry);
+                                        setPhoneCountry(normalizedCountry);
                                         setCountrySyncError("");
                                     }}
                                     isSearchable
